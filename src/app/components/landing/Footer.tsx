@@ -13,7 +13,7 @@ export function Footer() {
               </div>
               <div>
                 <div className="text-lg font-bold text-white">ArthaFlow</div>
-                <div className="text-xs text-gray-400">by ArthaP2P</div>
+                <div className="text-xs text-gray-400">by ArthaP2Pay</div>
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-6 max-w-sm">
@@ -81,7 +81,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="text-sm text-gray-400">
-            © 2026 ArthaFlow by ArthaP2P. All rights reserved.
+            © 2026 ArthaFlow by ArthaP2Pay. All rights reserved.
           </div>
           <div className="flex items-center gap-6 text-sm text-gray-400">
             <div className="flex items-center gap-2">

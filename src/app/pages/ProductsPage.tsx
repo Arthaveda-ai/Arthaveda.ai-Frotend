@@ -13,7 +13,7 @@ export default function ProductsPage() {
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 blur-3xl">
           <motion.div
             animate={{
               backgroundPosition: ['0% 0%', '100% 100%'],
@@ -36,7 +36,7 @@ export default function ProductsPage() {
           >
             Intelligent Finance
             <br />
-            <span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+            <span className="text-indigo-400">
               Automation Products
             </span>
           </motion.h1>
@@ -120,7 +120,7 @@ export default function ProductsPage() {
                       whileTap={{ scale: 0.98 }}
                       className="w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all flex items-center justify-center gap-2"
                     >
-                      Explore ArthaP2P
+                      Explore ArthaP2Pay
                       <ArrowRight className="w-5 h-5" />
                     </motion.button>
                   </Link>

@@ -2,12 +2,81 @@ import { motion } from 'motion/react';
 import { TrendingUp, DollarSign, Scale, Building2, CheckCircle2, ArrowRight, Users, Target, Clock } from 'lucide-react';
 import { Navbar } from '../components/arthveda/Navbar';
 import { Footer } from '../components/arthveda/Footer';
-import { ScrollToTop } from '../components/ScrollToTop';
+
+const services = [
+  {
+    icon: TrendingUp,
+    title: 'Arthveda Strategic Finance',
+    subtitle: 'CFO Advisory & Financial Planning',
+    gradient: 'from-indigo-500 to-purple-600',
+    description: 'Comprehensive CFO-level advisory services for growing businesses. From financial planning to strategic decision support, we act as your virtual CFO.',
+    offerings: [
+      'Financial planning & analysis',
+      'Budgeting and forecasting',
+      'Cash flow management',
+      'KPI design and monitoring',
+      'Board reporting and presentations',
+      'Strategic financial modeling',
+    ],
+    whoFor: 'Growing businesses, startups scaling beyond Series A, companies needing CFO expertise without full-time hire',
+    engagement: 'Retainer-based monthly engagement with flexible scope',
+  },
+  {
+    icon: DollarSign,
+    title: 'Capital Advisory',
+    subtitle: 'Fundraising & Valuation Expertise',
+    gradient: 'from-blue-500 to-cyan-600',
+    description: 'Navigate the complexities of fundraising and capital structuring. We help you raise capital efficiently and at the right valuation.',
+    offerings: [
+      'Fundraising strategy and execution',
+      'Investor pitch deck development',
+      'Financial modeling for fundraising',
+      'Valuation advisory',
+      'Due diligence support',
+      'Investor relations management',
+    ],
+    whoFor: 'Startups raising seed to Series B, companies planning M&A, businesses seeking strategic capital',
+    engagement: 'Success-based fees or project-based consulting',
+  },
+  {
+    icon: Scale,
+    title: 'Arthveda Legal',
+    subtitle: 'Financial Legal Structuring',
+    gradient: 'from-violet-500 to-indigo-600',
+    description: 'Expert guidance on financial legal structures, compliance, and regulatory matters. Bridge finance and legal for optimal outcomes.',
+    offerings: [
+      'Corporate financial structuring',
+      'Tax planning and optimization',
+      'Compliance advisory',
+      'Contract review and negotiation',
+      'Equity and cap table management',
+      'Regulatory compliance support',
+    ],
+    whoFor: 'Companies restructuring, startups setting up operations, businesses expanding internationally',
+    engagement: 'Hourly consulting or project-based fees',
+  },
+  {
+    icon: Building2,
+    title: 'Zoho Rollouts',
+    subtitle: 'Implementation & Transformation',
+    gradient: 'from-emerald-500 to-green-600',
+    description: 'End-to-end implementation of Zoho Books, Zoho Expense, and Zoho Inventory. Transform your financial operations with expert guidance.',
+    offerings: [
+      'Zoho Books implementation',
+      'Zoho Expense setup and training',
+      'Zoho Inventory configuration',
+      'Custom workflow design',
+      'Data migration from existing systems',
+      'Team training and change management',
+    ],
+    whoFor: 'SMEs digitizing finance operations, companies switching from other ERPs, businesses needing integrated finance stack',
+    engagement: 'Fixed-price implementation packages',
+  },
+];
 
 export default function ServicesPage() {
   return (
     <div className="min-h-screen bg-[#0B1120]">
-      <ScrollToTop />
       <Navbar />
 
       {/* Hero Section */}

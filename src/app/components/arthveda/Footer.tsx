@@ -9,11 +9,15 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-xl flex items-center justify-center">
-                <Brain className="w-6 h-6 text-white" />
+              <div className="w-10 h-10 bg-gradient-to-br from-indigo-100 to-blue-100 rounded-xl flex items-center justify-center">
+                <img
+                  src="/applogo.png"
+                  alt="Zoho Logo"
+                  className="w-22 h-22 object-contain"
+                />
               </div>
               <div>
-                <div className="text-lg font-bold text-white">Arthveda.ai</div>
+                <div className="text-lg font-bold text-white">Arthaveda</div>
               </div>
             </div>
             <p className="text-sm text-gray-400 mb-6">
@@ -38,7 +42,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link to="/products/arthap2p" className="text-sm text-gray-400 hover:text-white transition-colors">
-                  ArthaP2P
+                  ArthaP2Pay
                 </Link>
               </li>
               <li>

@@ -42,7 +42,7 @@ export function Sidebar({ isCollapsed, setIsCollapsed }: SidebarProps) {
             </div>
             <div>
               <div className="font-semibold text-gray-900 text-sm">ArthaFlow</div>
-              <div className="text-xs text-gray-500">by ArthaP2P</div>
+              <div className="text-xs text-gray-500">by ArthaP2Pay</div>
             </div>
           </div>
         ) : (

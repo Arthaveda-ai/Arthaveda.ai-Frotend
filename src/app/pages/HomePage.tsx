@@ -14,7 +14,7 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
         {/* Animated Gradient Background */}
-        <div className="absolute inset-0">
+        <div aria-hidden="true" className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
           <motion.div
             animate={{
               backgroundPosition: ['0% 0%', '100% 100%'],
@@ -39,10 +39,20 @@ export default function HomePage() {
             className="flex justify-center mb-12"
           >
             <div className="relative">
+              {/* Background Glow / Blur */}
               <div className="absolute inset-0 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-2xl blur-2xl opacity-30" />
-              <div className="relative w-24 h-24 bg-gradient-to-br from-indigo-600 to-blue-600 rounded-2xl flex items-center justify-center border-2 border-indigo-400/30 shadow-2xl">
-                <Brain className="w-12 h-12 text-white" />
-              </div>
+              <a
+                href="/"
+                target=""
+                rel="noopener noreferrer"
+                className="relative w-24 h-24 bg-gradient-to-br from-indigo-200 to-blue-100 rounded-2xl flex items-center justify-center border-2 border-indigo-400/30 shadow-2xl"
+              >
+                <img
+                  src="/applogo.png"
+                  alt="Zoho Logo"
+                  className="w-22 h-22 object-contain"
+                />
+              </a>
             </div>
           </motion.div>
 
@@ -67,7 +77,7 @@ export default function HomePage() {
               Transforming Finance
               <br />
               with
-              <span className="bg-gradient-to-r from-indigo-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <span className="text-indigo-300">
                 {' '}Strategy{' '}
               </span>
               and
@@ -119,6 +129,81 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ================= Trusted By Top Companies Section ================= */}
+
+    <section className="relative py-16 bg-[#0B1120] overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6">
+    
+          <h2 className="text-center text-4xl md:text-5xl font-bold text-white mb-15">
+            Trusted By Top <span className="text-gray-400">Companies</span>
+          </h2>
+
+          <div className="relative overflow-hidden">
+
+            {/* Left Gradient */}
+            <div className="absolute left-0 top-0 h-full w-16 md:w-24 bg-gradient-to-r from-[#0B1120] to-transparent z-10 pointer-events-none" />
+
+            {/* Right Gradient */}
+            <div className="absolute right-0 top-0 h-full w-16 md:w-24 bg-gradient-to-l from-[#0B1120] to-transparent z-10 pointer-events-none" />
+
+            <div className="flex w-max partner-scroll">
+
+              {[
+                { logo: "https://upgradecleaning.com/wp-content/uploads/2023/02/Upgarde-Logo-Red-and-white-300x81-1.png", link: "https://upgradecleaning.com" },
+                { logo: "https://www.technoilogy.it/wp-content/uploads/2021/06/cropped-Logo-Technoilogy-Orizz-POS-Colori.png", link: "https://www.technoilogy.it/" },
+                { logo: "https://www.narayananethralaya.org/wp-content/uploads/2025/08/Nn-Logo.svg", link: "https://www.narayananethralaya.org" },
+                { logo: "https://nakshatech.com/wp-content/uploads/2025/10/logo_transparent.gif", link: "https://nakshatech.com" },
+                { logo: "https://poovanthirehab.com/assets/images/flower.svg", link: "https://poovanthirehab.com" },
+                { logo: "https://www.vivektailors.com/assets/Logo.d4f81aac.png", link: "https://www.vivektailors.com/" },
+                { logo: "https://xentric.in/wp-content/uploads/2024/07/xentric-140x28.png", link: "https://xentric.in" },
+                { logo: "https://telecom.polycab.com/wp-content/uploads/2024/06/polycab-logo.png", link: "https://telecom.polycab.com" },
+                { logo: "https://ophthalmate.com/wp-content/uploads/2022/03/Ophthalmate-Logo-TP.png", link: "https://ophthalmate.com" },
+                { logo: "https://www.sigmoid.com/wp-content/uploads/2025/12/sigmoid-white-logo@2x.png", link: "https://www.sigmoid.com" },
+                { logo: "https://www.uds.in/webroot/images/uds-logo.svg", link: "https://www.uds.in" },
+                { logo: "https://www.contiinex.com/assets/images/default/contiinexR.png", link: "https://www.contiinex.com" },
+                { logo: "https://www.anpecopack.com/logo1.png", link: "https://www.anpecopack.com" },
+                { logo: "https://veremax.co.in/_astro/veremax_logo.BTYOBTzG.png", link: "https://veremax.co.in" },
+
+                // duplicate for smooth scroll
+                { logo: "https://upgradecleaning.com/wp-content/uploads/2023/02/Upgarde-Logo-Red-and-white-300x81-1.png", link: "https://upgradecleaning.com" },
+                { logo: "https://www.technoilogy.it/wp-content/uploads/2021/06/cropped-Logo-Technoilogy-Orizz-POS-Colori.png", link: "https://www.technoilogy.it/" },
+                { logo: "https://www.narayananethralaya.org/wp-content/uploads/2025/08/Nn-Logo.svg", link: "https://www.narayananethralaya.org" },
+                { logo: "https://nakshatech.com/wp-content/uploads/2025/10/logo_transparent.gif", link: "https://nakshatech.com" },
+                { logo: "https://poovanthirehab.com/assets/images/flower.svg", link: "https://poovanthirehab.com" },
+                { logo: "https://www.vivektailors.com/assets/Logo.d4f81aac.png", link: "https://www.vivektailors.com/" },
+                { logo: "https://xentric.in/wp-content/uploads/2024/07/xentric-140x28.png", link: "https://xentric.in" },
+                { logo: "https://telecom.polycab.com/wp-content/uploads/2024/06/polycab-logo.png", link: "https://telecom.polycab.com" },
+                { logo: "https://ophthalmate.com/wp-content/uploads/2022/03/Ophthalmate-Logo-TP.png", link: "https://ophthalmate.com" },
+                { logo: "https://www.sigmoid.com/wp-content/uploads/2025/12/sigmoid-white-logo@2x.png", link: "https://www.sigmoid.com" },
+                { logo: "https://www.uds.in/webroot/images/uds-logo.svg", link: "https://www.uds.in" },
+                { logo: "https://www.contiinex.com/assets/images/default/contiinexR.png", link: "https://www.contiinex.com" },
+                { logo: "https://www.anpecopack.com/logo1.png", link: "https://www.anpecopack.com" },
+                { logo: "https://veremax.co.in/_astro/veremax_logo.BTYOBTzG.png", link: "https://veremax.co.in" },
+              ].map((partner, index) => (
+                <div
+                  key={index}
+                  className="flex items-center justify-center mx-6 md:mx-10 min-w-[120px] md:min-w-[180px]"
+                >
+                  <a
+                    href={partner.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group relative block cursor-pointer z-20"
+                  >
+                    <img
+                      src={partner.logo}
+                      alt="Partner Logo"
+                      className="h-12 md:h-16 object-contain opacity-70 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:scale-105"
+                    />
+                    <span className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-100 transition duration-300 bg-indigo-500/10 blur-xl -z-10" />
+                  </a>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* About Arthveda Section */}
       <section className="py-32 bg-gradient-to-b from-[#0B1120] to-[#111827] relative">
         <div className="max-w-7xl mx-auto px-6">
@@ -132,7 +217,7 @@ export default function HomePage() {
               Who We Are
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto leading-relaxed">
-              Arthveda.ai is a unique blend of strategic finance advisory and intelligent automation platform provider. 
+              Arthaveda is a unique blend of strategic finance advisory and intelligent automation platform provider. 
               We partner with businesses to optimize their financial operations through expert consulting and powerful SaaS solutions.
             </p>
           </motion.div>
@@ -198,7 +283,7 @@ export default function HomePage() {
           >
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Our
-              <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="text-gray-400">
                 {' '}Products
               </span>
             </h2>
@@ -221,7 +306,7 @@ export default function HomePage() {
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-3xl font-bold text-white mb-4">ArthaP2P</h3>
+                <h3 className="text-3xl font-bold text-white mb-4">ArthaP2Pay</h3>
                 <p className="text-gray-400 mb-6 leading-relaxed">
                   Complete vendor portal automation from Purchase Order to Invoice matching to ERP Bill creation. 
                   Eliminate manual processing and reduce errors by 90%.
@@ -308,7 +393,7 @@ export default function HomePage() {
           >
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Advisory
-              <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="text-gray-400">
                 {' '}Services
               </span>
             </h2>
@@ -391,7 +476,7 @@ export default function HomePage() {
           >
             <h2 className="text-5xl md:text-6xl font-bold text-white mb-6">
               Why
-              <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="text-gray-400">
                 {' '}Arthveda
               </span>
             </h2>
@@ -453,7 +538,7 @@ export default function HomePage() {
           >
             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6">
               Industries We
-              <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
+              <span className="text-gray-400">
                 {' '}Empower
               </span>
             </h2>

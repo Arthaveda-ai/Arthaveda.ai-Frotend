@@ -88,7 +88,7 @@ export default function ArthaP2PPage() {
             className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight"
           >
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
-              ArthaP2P
+              ArthaP2Pay
             </span>
           </motion.h1>
 
@@ -197,7 +197,7 @@ export default function ArthaP2PPage() {
               </span>
             </h2>
             <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              ArthaP2P automates the entire procure-to-pay workflow with AI-powered matching and seamless ERP integration
+              ArthaP2Pay automates the entire procure-to-pay workflow with AI-powered matching and seamless ERP integration
             </p>
           </motion.div>
 
