@@ -1,500 +1,264 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Shield, Database, Sparkles, CheckCircle2, TrendingUp, Clock, Brain, FileCheck } from 'lucide-react';
+import { ArrowRight, CheckCircle2, GitCompare, BarChart3, Search, Database, FileCheck, AlertTriangle, Layers, RefreshCw } from 'lucide-react';
 import { Navbar } from '../components/arthveda/Navbar';
 import { Footer } from '../components/arthveda/Footer';
-import { ScrollToTop } from '../components/ScrollToTop';
+import { PageLayout } from '../components/PageLayout';
+import { Link } from 'react-router';
+import { useState, useEffect } from 'react';
+
+const reconciliationSteps = [
+  { icon: Database, title: 'Data Import', description: 'Bank statements & ledger data ingested', color: 'from-sky-500 to-cyan-600' },
+  { icon: Search, title: 'Smart Parsing', description: 'AI extracts and normalizes transactions', color: 'from-cyan-500 to-teal-600' },
+  { icon: GitCompare, title: 'Auto Matching', description: 'ML-powered transaction reconciliation', color: 'from-teal-500 to-emerald-600' },
+  { icon: AlertTriangle, title: 'Flag Exceptions', description: 'Discrepancies surfaced for review', color: 'from-amber-500 to-orange-600' },
+  { icon: FileCheck, title: 'Report Generated', description: 'Audit-ready reconciliation report', color: 'from-emerald-500 to-green-600' },
+];
 
 export default function ArthaMatchPage() {
+  const [activeStep, setActiveStep] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % reconciliationSteps.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="min-h-screen bg-[#0B1120]">
-      <ScrollToTop />
-      <Navbar />
+    <PageLayout>
+      <div className="min-h-screen bg-background">
+        <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              backgroundPosition: ['0% 0%', '100% 100%'],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
-            className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-cyan-900/10 to-indigo-900/20"
-            style={{ backgroundSize: '200% 200%' }}
-          />
-        </div>
-
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-8">
-              <Shield className="w-4 h-4 text-blue-400" />
-              <span className="text-sm text-blue-300 font-medium">Bank Reconciliation AI</span>
-            </div>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight"
-          >
-            <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent">
-              ArthaMatch
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-400 mb-12 max-w-4xl mx-auto leading-relaxed"
-          >
-            Intelligent reconciliation engine that automates bank statement and ledger matching. 
-            Save hundreds of hours with ML-powered transaction matching.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl font-semibold text-lg shadow-lg shadow-blue-500/50 flex items-center gap-2"
-            >
-              Request Demo
-              <ArrowRight className="w-5 h-5" />
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-white/5 backdrop-blur-sm border border-white/10 text-white rounded-2xl font-semibold text-lg hover:bg-white/10 transition-all"
-            >
-              View Pricing
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Problem Statement */}
-      <section className="py-32 bg-gradient-to-b from-[#0B1120] to-[#111827]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-white mb-6">
-              The Reconciliation
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                {' '}Problem
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: 'Time-Consuming',
-                description: 'Finance teams spend days manually matching thousands of transactions',
-                impact: '100+ hours/month',
-              },
-              {
-                title: 'Error-Prone',
-                description: 'Manual reconciliation leads to missed transactions and discrepancies',
-                impact: '10-15% error rate',
-              },
-              {
-                title: 'Month-End Chaos',
-                description: 'Pressure to close books creates stress and rushed reconciliations',
-                impact: '5-7 day delays',
-              },
-            ].map((problem, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
-              >
-                <div className="text-4xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent mb-4">
-                  {problem.impact}
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{problem.title}</h3>
-                <p className="text-gray-400">{problem.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Solution */}
-      <section className="py-32 bg-[#111827]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-white mb-6">
-              Intelligent
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                {' '}Automation
-              </span>
-            </h2>
-            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-              ArthaMatch uses machine learning to automatically match transactions with 99%+ accuracy
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Features */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="space-y-6">
-                {[
-                  {
-                    icon: Brain,
-                    title: 'ML-Powered Matching',
-                    description: 'Smart algorithms learn from your patterns to improve accuracy over time',
-                  },
-                  {
-                    icon: Database,
-                    title: 'Multi-Source Integration',
-                    description: 'Connect all your bank accounts and accounting systems in one place',
-                  },
-                  {
-                    icon: Sparkles,
-                    title: 'Auto-Categorization',
-                    description: 'Intelligent transaction categorization based on historical data',
-                  },
-                  {
-                    icon: FileCheck,
-                    title: 'Audit-Ready Reports',
-                    description: 'Complete reconciliation reports with full transaction trails',
-                  },
-                ].map((item, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                    className="flex items-start gap-4"
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center flex-shrink-0">
-                      <item.icon className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                      <p className="text-gray-400">{item.description}</p>
-                    </div>
-                  </motion.div>
-                ))}
+        {/* Hero */}
+        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-50 via-cyan-50 to-teal-50" />
+          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-sky-100 border border-sky-200 rounded-full mb-8">
+                <GitCompare className="w-4 h-4 text-sky-600" />
+                <span className="text-sm text-sky-700 font-medium">Intelligent Reconciliation</span>
               </div>
             </motion.div>
 
-            {/* Stats */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="space-y-6"
-            >
-              <div className="relative">
-                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-3xl blur-3xl opacity-20" />
-                <div className="relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-8">
-                  <h3 className="text-2xl font-bold text-white mb-8">Performance Metrics</h3>
-                  <div className="space-y-8">
+            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+              className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight">
+              ArthaMatch
+            </motion.h1>
+
+            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+              className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+              Intelligent reconciliation engine that automates bank statement and ledger matching. Save hundreds of hours with ML-powered transaction matching.
+            </motion.p>
+
+            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Link to="/contact">
+                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                  className="px-8 py-4 bg-gradient-to-r from-sky-600 to-cyan-600 text-white rounded-2xl font-semibold text-lg shadow-lg shadow-sky-500/30 flex items-center gap-2">
+                  Request Demo <ArrowRight className="w-5 h-5" />
+                </motion.button>
+              </Link>
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-background border-2 border-border text-foreground rounded-2xl font-semibold text-lg hover:shadow-md transition-all">
+                View Pricing
+              </motion.button>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Challenge */}
+        <section className="py-32 bg-background border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-sky-600">Challenge</span></h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                { title: 'Manual Reconciliation', description: 'Finance teams spend days matching bank statements with ledger entries line by line', impact: '40+ hours/month' },
+                { title: 'Unresolved Discrepancies', description: 'Mismatches pile up creating audit risks and financial inaccuracies', impact: '12% mismatch rate' },
+                { title: 'Delayed Closings', description: 'Month-end close stretched by manual reconciliation bottlenecks', impact: '5-7 day delays' },
+              ].map((problem, index) => (
+                <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
+                  className="p-8 bg-background border border-border rounded-2xl">
+                  <div className="text-4xl font-bold font-mono-data text-red-500 mb-4">{problem.impact}</div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{problem.title}</h3>
+                  <p className="text-muted-foreground">{problem.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Solution */}
+        <section className="py-32 bg-muted border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-sky-600">Solution</span></h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                ArthaMatch uses machine learning to automatically reconcile transactions across bank statements, ERPs, and ledgers
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+              <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                <div className="space-y-6">
+                  {[
+                    { title: 'Multi-Source Ingestion', description: 'Connect bank feeds, ERP exports, and manual uploads in any format' },
+                    { title: 'ML-Powered Matching', description: 'Self-learning algorithms that improve accuracy over time with 99.5% match rate' },
+                    { title: 'Exception Workflows', description: 'Automated routing of mismatches with suggested resolutions' },
+                    { title: 'Audit-Ready Reports', description: 'One-click compliance reports with full transaction trail' },
+                  ].map((item, index) => (
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center flex-shrink-0">
+                        <CheckCircle2 className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                        <p className="text-muted-foreground">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+                <div className="bg-background border border-border rounded-2xl p-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-6">Impact Metrics</h3>
+                  <div className="space-y-6">
                     {[
-                      { label: 'Match Accuracy', value: 99, color: 'from-emerald-500 to-green-600' },
-                      { label: 'Time Savings', value: 85, color: 'from-blue-500 to-cyan-600' },
-                      { label: 'Cost Reduction', value: 70, color: 'from-indigo-500 to-purple-600' },
-                    ].map((metric, index) => (
-                      <div key={index}>
-                        <div className="flex items-center justify-between mb-3">
-                          <span className="text-gray-400">{metric.label}</span>
-                          <span className="text-2xl font-bold text-white">{metric.value}%</span>
+                      { label: 'Reconciliation Time', value: '-95%', width: '95%', gradient: 'from-emerald-500 to-green-600' },
+                      { label: 'Match Accuracy', value: '99.5%', width: '99.5%', gradient: 'from-sky-500 to-cyan-600' },
+                      { label: 'Month-End Close', value: '-80%', width: '80%', gradient: 'from-blue-500 to-indigo-600' },
+                    ].map((metric, idx) => (
+                      <div key={idx}>
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-muted-foreground text-sm">{metric.label}</span>
+                          <span className="text-emerald-600 font-bold font-mono-data">{metric.value}</span>
                         </div>
-                        <div className="h-3 bg-white/5 rounded-full overflow-hidden">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${metric.value}%` }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 1, delay: 0.3 + index * 0.2 }}
-                            className={`h-full bg-gradient-to-r ${metric.color} rounded-full`}
-                          />
+                        <div className="h-2 bg-muted rounded-full overflow-hidden">
+                          <motion.div initial={{ width: 0 }} whileInView={{ width: metric.width }} viewport={{ once: true }}
+                            transition={{ duration: 1, delay: 0.3 + idx * 0.2 }}
+                            className={`h-full bg-gradient-to-r ${metric.gradient} rounded-full`} />
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
 
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { value: '100K+', label: 'Transactions/Month' },
-                  { value: '24/7', label: 'Automation' },
-                  { value: '<1min', label: 'Avg Match Time' },
-                  { value: '50+', label: 'Bank Integrations' },
-                ].map((stat, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.8 + index * 0.1 }}
-                    className="p-6 bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl text-center"
-                  >
-                    <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-2">
-                      {stat.value}
+        {/* Workflow */}
+        <section className="py-32 bg-background border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
+              <h2 className="text-5xl font-bold text-foreground mb-6">How It <span className="text-sky-600">Works</span></h2>
+              <p className="text-xl text-muted-foreground">From raw data to reconciled reports in minutes</p>
+            </motion.div>
+            <div className="relative">
+              <div className="absolute top-24 left-0 right-0 h-px bg-border hidden lg:block">
+                <motion.div initial={{ width: '0%' }} animate={{ width: `${(activeStep / (reconciliationSteps.length - 1)) * 100}%` }}
+                  transition={{ duration: 0.5 }} className="h-full bg-gradient-to-r from-sky-500 via-cyan-500 to-emerald-500" style={{ height: '2px' }} />
+              </div>
+              <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 relative">
+                {reconciliationSteps.map((step, index) => (
+                  <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }} className="relative">
+                    <div className={`relative p-8 rounded-2xl border transition-all duration-500 ${activeStep === index ? 'bg-sky-50 border-sky-200 shadow-xl' : 'bg-background border-border'}`}>
+                      <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
+                        className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br ${step.color} shadow-lg`}>
+                        <step.icon className="w-8 h-8 text-white" />
+                      </motion.div>
+                      <h3 className="text-xl font-bold text-foreground mb-2 text-center">{step.title}</h3>
+                      <p className="text-sm text-muted-foreground text-center">{step.description}</p>
+                      {activeStep === index && (
+                        <motion.div initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 2.5 }}
+                          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-b-2xl" />
+                      )}
                     </div>
-                    <div className="text-sm text-gray-400">{stat.label}</div>
                   </motion.div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Features */}
+        <section className="py-32 bg-muted border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-foreground mb-6">Powerful <span className="text-sky-600">Features</span></h2>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-32 bg-gradient-to-b from-[#111827] to-[#0B1120]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-20"
-          >
-            <h2 className="text-5xl font-bold text-white mb-6">
-              How It
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                {' '}Works
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {[
-              {
-                step: '01',
-                title: 'Connect Sources',
-                description: 'Link your bank accounts and accounting system',
-                icon: Database,
-              },
-              {
-                step: '02',
-                title: 'Import Data',
-                description: 'Automatically fetch transactions from all sources',
-                icon: TrendingUp,
-              },
-              {
-                step: '03',
-                title: 'AI Matching',
-                description: 'ML algorithms match transactions instantly',
-                icon: Brain,
-              },
-              {
-                step: '04',
-                title: 'Review & Close',
-                description: 'Quick review of exceptions and close books',
-                icon: CheckCircle2,
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="relative"
-              >
-                <div className="relative p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all">
-                  <div className="text-6xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent mb-4 opacity-20">
-                    {item.step}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                { icon: GitCompare, title: 'Smart Matching', description: 'Fuzzy matching algorithms handle partial matches and date variations' },
+                { icon: BarChart3, title: 'Reconciliation Dashboard', description: 'Real-time status of all reconciliation processes' },
+                { icon: RefreshCw, title: 'Auto-Retry', description: 'Unmatched items re-processed with evolving ML models' },
+                { icon: Layers, title: 'Multi-Currency', description: 'Reconcile across currencies with auto FX conversion' },
+                { icon: Database, title: 'Any Data Source', description: 'CSV, Excel, API feeds, bank integrations supported' },
+                { icon: FileCheck, title: 'Compliance Reports', description: 'SOX, IFRS, and custom audit report generation' },
+              ].map((feature, index) => (
+                <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  transition={{ delay: index * 0.05 }} whileHover={{ y: -8 }}
+                  className="p-8 bg-background border border-border rounded-2xl hover:shadow-lg transition-all">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center mb-6">
+                    <feature.icon className="w-7 h-7 text-white" />
                   </div>
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center mb-6">
-                    <item.icon className="w-7 h-7 text-white" />
+                  <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Use Cases */}
+        <section className="py-32 bg-background border-t border-border">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
+              <h2 className="text-5xl font-bold text-foreground mb-6">Perfect For</h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {[
+                { title: 'Banks & NBFCs', description: 'High-volume nostro/vostro and interbank reconciliation', stats: ['1M+ txns/day', 'Multi-bank', 'Real-time'] },
+                { title: 'E-Commerce', description: 'Payment gateway to bank to ERP reconciliation', stats: ['Multi-gateway', 'Refund tracking', 'Settlement match'] },
+                { title: 'Insurance Companies', description: 'Premium collection and claims reconciliation', stats: ['Policy-level', 'Agent commission', 'Reinsurance'] },
+                { title: 'Enterprise Finance', description: 'Multi-entity, multi-currency consolidated reconciliation', stats: ['100+ entities', 'Cross-currency', 'Intercompany'] },
+              ].map((useCase, index) => (
+                <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }} className="p-8 bg-background border border-border rounded-2xl hover:shadow-lg transition-all">
+                  <h3 className="text-2xl font-bold text-foreground mb-3">{useCase.title}</h3>
+                  <p className="text-muted-foreground mb-6">{useCase.description}</p>
+                  <div className="flex flex-wrap gap-3">
+                    {useCase.stats.map((stat, idx) => (
+                      <div key={idx} className="px-4 py-2 bg-muted border border-border rounded-xl text-sm text-muted-foreground font-mono-data">{stat}</div>
+                    ))}
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                  <p className="text-sm text-gray-400">{item.description}</p>
-                </div>
-                {index < 3 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-blue-500/50 to-transparent" />
-                )}
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Features Grid */}
-      <section className="py-32 bg-[#0B1120]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-white mb-6">
-              Powerful
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                {' '}Features
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              { icon: Brain, title: 'Smart Matching', description: 'AI learns your patterns for better accuracy' },
-              { icon: Database, title: 'Multi-Currency', description: 'Handle transactions in 150+ currencies' },
-              { icon: Clock, title: 'Real-Time Sync', description: 'Continuous transaction updates' },
-              { icon: Shield, title: 'Bank-Grade Security', description: 'Encrypted data with SOC 2 compliance' },
-              { icon: TrendingUp, title: 'Analytics Dashboard', description: 'Insights into cash flow and trends' },
-              { icon: FileCheck, title: 'Audit Trail', description: 'Complete history for compliance' },
-            ].map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.05 }}
-                whileHover={{ y: -8 }}
-                className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all"
-              >
-                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center mb-6">
-                  <feature.icon className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">{feature.title}</h3>
-                <p className="text-sm text-gray-400">{feature.description}</p>
-              </motion.div>
-            ))}
+        {/* CTA */}
+        <section className="py-32 bg-gradient-to-br from-sky-50 via-cyan-50 to-teal-50 relative overflow-hidden border-t border-border">
+          <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
+            <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              className="text-5xl font-bold text-foreground mb-6">Ready to Automate Reconciliation?</motion.h2>
+            <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
+              className="text-xl text-muted-foreground mb-12">See ArthaMatch reconcile thousands of transactions in minutes</motion.p>
+            <Link to="/contact">
+              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+                className="px-12 py-5 bg-gradient-to-r from-sky-600 to-cyan-600 text-white rounded-2xl font-bold text-xl shadow-lg shadow-sky-500/30 inline-flex items-center gap-3">
+                Request Demo <ArrowRight className="w-6 h-6" />
+              </motion.button>
+            </Link>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Use Cases */}
-      <section className="py-32 bg-[#111827]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-white mb-6">
-              Trusted By
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'SMEs & Startups',
-                description: 'Close books faster without hiring dedicated reconciliation staff',
-                benefits: ['Quick setup', 'Affordable pricing', 'Easy to use'],
-              },
-              {
-                title: 'Accounting Firms',
-                description: 'Serve more clients efficiently with automated reconciliation',
-                benefits: ['Multi-client', 'White-label option', 'Bulk processing'],
-              },
-              {
-                title: 'E-commerce Businesses',
-                description: 'Handle high transaction volumes from multiple payment gateways',
-                benefits: ['Payment gateway integration', 'Multi-currency', 'Real-time matching'],
-              },
-              {
-                title: 'Enterprise Finance Teams',
-                description: 'Scale reconciliation across multiple entities and bank accounts',
-                benefits: ['Multi-entity support', 'Advanced workflows', 'API access'],
-              },
-            ].map((useCase, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl hover:bg-white/10 transition-all"
-              >
-                <h3 className="text-2xl font-bold text-white mb-3">{useCase.title}</h3>
-                <p className="text-gray-400 mb-6">{useCase.description}</p>
-                <div className="flex flex-wrap gap-3">
-                  {useCase.benefits.map((benefit, idx) => (
-                    <div key={idx} className="px-4 py-2 bg-white/5 border border-white/10 rounded-xl text-sm text-gray-300">
-                      {benefit}
-                    </div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="py-32 bg-gradient-to-b from-[#111827] to-[#0B1120] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-            }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full blur-3xl"
-          />
-        </div>
-
-        <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-          <motion.h2
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-5xl font-bold text-white mb-6"
-          >
-            Stop Manual Reconciliation Today
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-xl text-gray-400 mb-12"
-          >
-            See ArthaMatch in action with a live demo
-          </motion.p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-12 py-5 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-2xl font-bold text-xl shadow-2xl shadow-blue-500/50 inline-flex items-center gap-3"
-          >
-            Request Demo
-            <ArrowRight className="w-6 h-6" />
-          </motion.button>
-        </div>
-      </section>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </PageLayout>
   );
 }

@@ -1,26 +1,26 @@
 import { motion } from 'motion/react';
-import { ArrowRight, FileText, Send, Upload, Sparkles, CheckCircle2, Zap, TrendingUp, Clock, Shield } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Receipt, Bell, CreditCard, Users, PieChart, Clock, Wallet, Send, BarChart3, FileText } from 'lucide-react';
 import { Navbar } from '../components/arthveda/Navbar';
 import { Footer } from '../components/arthveda/Footer';
 import { PageLayout } from '../components/PageLayout';
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router';
+import { useState, useEffect } from 'react';
 
 const workflowSteps = [
-  { icon: FileText, title: 'PO Created', description: 'Purchase order generated in your system', color: 'from-indigo-500 to-purple-600' },
-  { icon: Send, title: 'Vendor Receives', description: 'Automatically sent to vendor portal', color: 'from-purple-500 to-pink-600' },
-  { icon: Upload, title: 'Invoice Uploaded', description: 'Vendor submits invoice through portal', color: 'from-blue-500 to-cyan-600' },
-  { icon: Sparkles, title: 'AI Matching', description: 'Intelligent comparison & validation', color: 'from-violet-500 to-indigo-600' },
-  { icon: CheckCircle2, title: 'Bill Auto Created', description: 'ERP bill automatically generated', color: 'from-emerald-500 to-green-600' },
+  { icon: Receipt, title: 'Invoice Created', description: 'Generate and send professional invoices', color: 'from-emerald-500 to-teal-600' },
+  { icon: Send, title: 'Auto Delivery', description: 'Multi-channel delivery to customers', color: 'from-teal-500 to-cyan-600' },
+  { icon: Bell, title: 'Smart Reminders', description: 'Automated follow-ups and escalations', color: 'from-cyan-500 to-blue-600' },
+  { icon: CreditCard, title: 'Payment Received', description: 'Real-time payment tracking & matching', color: 'from-blue-500 to-indigo-600' },
+  { icon: CheckCircle2, title: 'Auto Reconciled', description: 'Invoice marked paid and books updated', color: 'from-emerald-500 to-green-600' },
 ];
 
-export default function ArthaP2PPage() {
+export default function ArthaCollectPage() {
   const [activeStep, setActiveStep] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveStep((prev) => (prev + 1) % workflowSteps.length);
-    }, 2000);
+    }, 2500);
     return () => clearInterval(interval);
   }, []);
 
@@ -31,30 +31,30 @@ export default function ArthaP2PPage() {
 
         {/* Hero */}
         <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50" />
           <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 border border-indigo-200 rounded-full mb-8">
-                <Zap className="w-4 h-4 text-indigo-600" />
-                <span className="text-sm text-indigo-700 font-medium">Procure-to-Pay Automation</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-emerald-100 border border-emerald-200 rounded-full mb-8">
+                <Wallet className="w-4 h-4 text-emerald-600" />
+                <span className="text-sm text-emerald-700 font-medium">Accounts Receivable Automation</span>
               </div>
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
               className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight">
-              ArthaP2Pay
+              ArthaCollect
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
               className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-              Complete vendor portal automation from Purchase Order to Invoice matching to ERP Bill creation. Transform your P2P process with AI-powered intelligence.
+              Accelerate cash inflow with intelligent invoicing, automated reminders, and real-time payment tracking. Reduce DSO by up to 60%.
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link to="/contact">
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl font-semibold text-lg shadow-lg shadow-indigo-500/30 flex items-center gap-2">
+                  className="px-8 py-4 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-2xl font-semibold text-lg shadow-lg shadow-emerald-500/30 flex items-center gap-2">
                   Request Demo <ArrowRight className="w-5 h-5" />
                 </motion.button>
               </Link>
@@ -70,13 +70,13 @@ export default function ArthaP2PPage() {
         <section className="py-32 bg-background border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-indigo-600">Challenge</span></h2>
+              <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-emerald-600">Challenge</span></h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
-                { title: 'Manual Processing', description: 'Hours spent manually matching POs with invoices, leading to delays and errors', impact: '85% of finance time' },
-                { title: 'Data Entry Errors', description: 'Human errors in matching and data entry cause payment delays and disputes', impact: '15-20% error rate' },
-                { title: 'Vendor Friction', description: 'Email back-and-forth, lost documents, and slow approvals frustrate vendors', impact: '2-3 weeks average' },
+                { title: 'Slow Collections', description: 'Manual follow-ups and lack of visibility cause receivables to age', impact: '45+ day DSO' },
+                { title: 'Cash Flow Gaps', description: 'Unpredictable collections create working capital constraints', impact: '30% tied up' },
+                { title: 'Lost Revenue', description: 'Missed invoices, wrong amounts, and disputed charges lead to write-offs', impact: '2-5% revenue loss' },
               ].map((problem, index) => (
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
                   className="p-8 bg-background border border-border rounded-2xl">
@@ -93,9 +93,9 @@ export default function ArthaP2PPage() {
         <section className="py-32 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-indigo-600">Solution</span></h2>
+              <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-emerald-600">Solution</span></h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                ArthaP2Pay automates the entire procure-to-pay workflow with AI-powered matching and seamless ERP integration
+                ArthaCollect transforms accounts receivable with smart invoicing, automated dunning, and predictive cash flow analytics
               </p>
             </motion.div>
 
@@ -103,13 +103,13 @@ export default function ArthaP2PPage() {
               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <div className="space-y-6">
                   {[
-                    { title: 'Automated Vendor Portal', description: 'Vendors access a self-service portal to view POs and submit invoices' },
-                    { title: 'AI-Powered Matching', description: '3-way matching between PO, Invoice, and GRN with 99.9% accuracy' },
-                    { title: 'Exception Management', description: 'Smart alerts for discrepancies with suggested resolutions' },
-                    { title: 'ERP Integration', description: 'Seamless bill creation in SAP, Oracle, Zoho, or any ERP system' },
+                    { title: 'Smart Invoicing', description: 'Auto-generate invoices from sales orders with multi-channel delivery' },
+                    { title: 'Automated Dunning', description: 'Escalating reminder sequences based on customer payment behavior' },
+                    { title: 'Payment Portal', description: 'Customer self-service portal with multiple payment options' },
+                    { title: 'Predictive Analytics', description: 'AI-powered cash flow forecasting based on payment patterns' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center flex-shrink-0">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -121,14 +121,14 @@ export default function ArthaP2PPage() {
                 </div>
               </motion.div>
 
-              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="relative">
+              <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <div className="bg-background border border-border rounded-2xl p-8">
                   <h3 className="text-2xl font-bold text-foreground mb-6">Impact Metrics</h3>
                   <div className="space-y-6">
                     {[
-                      { label: 'Processing Time', value: '-90%', width: '90%', gradient: 'from-emerald-500 to-green-600' },
-                      { label: 'Accuracy Rate', value: '99.9%', width: '99.9%', gradient: 'from-indigo-500 to-purple-600' },
-                      { label: 'Cost Reduction', value: '-75%', width: '75%', gradient: 'from-blue-500 to-cyan-600' },
+                      { label: 'DSO Reduction', value: '-60%', width: '60%', gradient: 'from-emerald-500 to-green-600' },
+                      { label: 'Collection Rate', value: '98.5%', width: '98.5%', gradient: 'from-teal-500 to-cyan-600' },
+                      { label: 'Write-off Reduction', value: '-85%', width: '85%', gradient: 'from-cyan-500 to-blue-600' },
                     ].map((metric, idx) => (
                       <div key={idx}>
                         <div className="flex items-center justify-between mb-2">
@@ -153,31 +153,28 @@ export default function ArthaP2PPage() {
         <section className="py-32 bg-background border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
-              <h2 className="text-5xl font-bold text-foreground mb-6">How It <span className="text-indigo-600">Works</span></h2>
-              <p className="text-xl text-muted-foreground">5 simple steps to complete automation</p>
+              <h2 className="text-5xl font-bold text-foreground mb-6">How It <span className="text-emerald-600">Works</span></h2>
+              <p className="text-xl text-muted-foreground">From invoice to cash in record time</p>
             </motion.div>
-
             <div className="relative">
               <div className="absolute top-24 left-0 right-0 h-px bg-border hidden lg:block">
                 <motion.div initial={{ width: '0%' }} animate={{ width: `${(activeStep / (workflowSteps.length - 1)) * 100}%` }}
-                  transition={{ duration: 0.5 }} className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-emerald-500" style={{ height: '2px' }} />
+                  transition={{ duration: 0.5 }} className="h-full bg-gradient-to-r from-emerald-500 via-teal-500 to-blue-500" style={{ height: '2px' }} />
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 relative">
                 {workflowSteps.map((step, index) => (
                   <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }} className="relative">
-                    <div className={`relative p-8 rounded-2xl border transition-all duration-500 ${activeStep === index ? 'bg-indigo-50 border-indigo-200 shadow-xl' : 'bg-background border-border'}`}>
-                      <div className="relative mb-6">
-                        <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
-                          className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto bg-gradient-to-br ${step.color} shadow-lg`}>
-                          <step.icon className="w-8 h-8 text-white" />
-                        </motion.div>
-                      </div>
+                    <div className={`relative p-8 rounded-2xl border transition-all duration-500 ${activeStep === index ? 'bg-emerald-50 border-emerald-200 shadow-xl' : 'bg-background border-border'}`}>
+                      <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
+                        className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br ${step.color} shadow-lg`}>
+                        <step.icon className="w-8 h-8 text-white" />
+                      </motion.div>
                       <h3 className="text-xl font-bold text-foreground mb-2 text-center">{step.title}</h3>
                       <p className="text-sm text-muted-foreground text-center">{step.description}</p>
                       {activeStep === index && (
-                        <motion.div initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 2 }}
-                          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-b-2xl" />
+                        <motion.div initial={{ width: 0 }} animate={{ width: '100%' }} transition={{ duration: 2.5 }}
+                          className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-b-2xl" />
                       )}
                     </div>
                   </motion.div>
@@ -191,21 +188,21 @@ export default function ArthaP2PPage() {
         <section className="py-32 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-foreground mb-6">Powerful <span className="text-indigo-600">Features</span></h2>
+              <h2 className="text-5xl font-bold text-foreground mb-6">Powerful <span className="text-emerald-600">Features</span></h2>
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: Zap, title: 'Real-time Matching', description: 'Instant PO-Invoice comparison with AI validation' },
-                { icon: TrendingUp, title: 'Analytics Dashboard', description: 'Complete visibility into P2P metrics and trends' },
-                { icon: Clock, title: 'Fast Approvals', description: 'Multi-level workflow with automated routing' },
-                { icon: Shield, title: 'Audit Trail', description: 'Complete transaction history for compliance' },
-                { icon: FileText, title: 'Document Management', description: 'Centralized storage for all POs and invoices' },
-                { icon: CheckCircle2, title: 'Auto Bill Creation', description: 'Direct ERP integration for bill generation' },
+                { icon: Receipt, title: 'Smart Invoicing', description: 'Template-driven invoicing with auto-generation from orders' },
+                { icon: Bell, title: 'Automated Reminders', description: 'Multi-channel dunning with escalation workflows' },
+                { icon: PieChart, title: 'AR Analytics', description: 'Aging analysis, DSO trends, and collection forecasting' },
+                { icon: Users, title: 'Customer Portal', description: 'Self-service payment and statement access' },
+                { icon: CreditCard, title: 'Multi-Payment', description: 'Accept bank transfer, UPI, cards, and digital wallets' },
+                { icon: BarChart3, title: 'Cash Flow Forecast', description: 'Predictive analytics for working capital planning' },
               ].map((feature, index) => (
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }} whileHover={{ y: -8 }}
                   className="p-8 bg-background border border-border rounded-2xl hover:shadow-lg transition-all">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-6">
                     <feature.icon className="w-7 h-7 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
@@ -216,44 +213,16 @@ export default function ArthaP2PPage() {
           </div>
         </section>
 
-        {/* Use Cases */}
-        <section className="py-32 bg-background border-t border-border">
-          <div className="max-w-7xl mx-auto px-6">
-            <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-foreground mb-6">Perfect For</h2>
-            </motion.div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                { title: 'Manufacturing Companies', description: 'Handle complex BOMs and multi-supplier procurement', stats: ['500+ POs/month', '50+ suppliers', '3-way matching'] },
-                { title: 'Construction Firms', description: 'Project-based procurement with real-time cost tracking', stats: ['Multi-project', 'Site-wise tracking', 'Contractor management'] },
-                { title: 'Retail Chains', description: 'Centralized procurement with branch-level control', stats: ['200+ branches', 'Centralized approval', 'Local flexibility'] },
-                { title: 'Enterprise Businesses', description: 'High-volume transaction processing at scale', stats: ['10K+ POs/month', 'Multiple ERPs', 'Global operations'] },
-              ].map((useCase, index) => (
-                <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }} className="p-8 bg-background border border-border rounded-2xl hover:shadow-lg transition-all">
-                  <h3 className="text-2xl font-bold text-foreground mb-3">{useCase.title}</h3>
-                  <p className="text-muted-foreground mb-6">{useCase.description}</p>
-                  <div className="flex flex-wrap gap-3">
-                    {useCase.stats.map((stat, idx) => (
-                      <div key={idx} className="px-4 py-2 bg-muted border border-border rounded-xl text-sm text-muted-foreground font-mono-data">{stat}</div>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
-        <section className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 relative overflow-hidden border-t border-border">
+        <section className="py-32 bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 relative overflow-hidden border-t border-border">
           <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
             <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              className="text-5xl font-bold text-foreground mb-6">Ready to Automate Your P2P Process?</motion.h2>
+              className="text-5xl font-bold text-foreground mb-6">Ready to Accelerate Collections?</motion.h2>
             <motion.p initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}
-              className="text-xl text-muted-foreground mb-12">See ArthaP2Pay in action with a personalized demo</motion.p>
+              className="text-xl text-muted-foreground mb-12">See how ArthaCollect can reduce your DSO by 60%</motion.p>
             <Link to="/contact">
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                className="px-12 py-5 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-2xl font-bold text-xl shadow-lg shadow-indigo-500/30 inline-flex items-center gap-3">
+                className="px-12 py-5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white rounded-2xl font-bold text-xl shadow-lg shadow-emerald-500/30 inline-flex items-center gap-3">
                 Request Demo <ArrowRight className="w-6 h-6" />
               </motion.button>
             </Link>

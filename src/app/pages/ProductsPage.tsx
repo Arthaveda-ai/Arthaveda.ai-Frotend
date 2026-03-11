@@ -1,18 +1,20 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Zap, Shield, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, Zap, Shield, TrendingUp, CheckCircle2, Wallet, Receipt, FileText,} from 'lucide-react';
 import { Navbar } from '../components/arthveda/Navbar';
 import { Footer } from '../components/arthveda/Footer';
-import { ScrollToTop } from '../components/ScrollToTop';
+import { PageLayout } from '../components/PageLayout';
+import ProductCard from '../components/ui/products-card';
 import { Link } from 'react-router';
 
 export default function ProductsPage() {
   return (
-    <div className="min-h-screen bg-[#0B1120]">
-      <ScrollToTop />
+    <PageLayout>
+    <div className="min-h-screen bg-white">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
         <div className="absolute inset-0 blur-3xl">
           <motion.div
             animate={{
@@ -23,7 +25,7 @@ export default function ProductsPage() {
               repeat: Infinity,
               repeatType: 'reverse',
             }}
-            className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-blue-900/10 to-purple-900/20"
+            className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50"
             style={{ backgroundSize: '200% 200%' }}
           />
         </div>
@@ -32,12 +34,12 @@ export default function ProductsPage() {
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-7xl font-bold text-white mb-6 leading-tight"
+            className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
           >
             Intelligent Finance
             <br />
-            <span className="text-indigo-400">
-              Automation Products
+            <span className="text-indigo-600">
+              Automation Solutions
             </span>
           </motion.h1>
 
@@ -45,7 +47,7 @@ export default function ProductsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-400 mb-8 max-w-3xl mx-auto"
+            className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
           >
             Purpose-built SaaS solutions that automate complex finance workflows with AI precision
           </motion.p>
@@ -53,228 +55,232 @@ export default function ProductsPage() {
       </section>
 
       {/* Products Grid */}
-      <section className="py-20 bg-gradient-to-b from-[#0B1120] to-[#111827]">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* ArthaP2P */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="group relative"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-3xl blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              
-              <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden">
-                {/* Header */}
-                <div className="p-10 border-b border-white/10">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Zap className="w-10 h-10 text-white" />
-                  </div>
-                  <h2 className="text-4xl font-bold text-white mb-4">ArthaP2P</h2>
-                  <p className="text-lg text-gray-300 mb-6">
-                    Complete vendor portal automation platform
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-500/10 border border-indigo-500/20 rounded-full">
-                    <span className="text-sm text-indigo-300 font-medium">Procure-to-Pay Automation</span>
-                  </div>
-                </div>
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-7xl mx-auto px-6">
 
-                {/* Content */}
-                <div className="p-10">
-                  <h3 className="text-xl font-bold text-white mb-4">Key Features</h3>
-                  <ul className="space-y-4 mb-8">
-                    {[
-                      'AI-powered PO to Invoice matching',
-                      'Automated ERP bill creation',
-                      'Real-time vendor portal with document exchange',
-                      'Exception management and alerts',
-                      'Multi-level approval workflows',
-                      'Seamless ERP integration (SAP, Oracle, Zoho)',
-                    ].map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-gray-300">
-                        <CheckCircle2 className="w-5 h-5 text-indigo-400 flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
-                  <div className="grid grid-cols-3 gap-4 mb-8 p-6 bg-white/5 rounded-xl">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-white mb-1">90%</div>
-                      <div className="text-xs text-gray-400">Faster Processing</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-white mb-1">99.9%</div>
-                      <div className="text-xs text-gray-400">Accuracy</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-white mb-1">10K+</div>
-                      <div className="text-xs text-gray-400">POs/Month</div>
-                    </div>
-                  </div>
-
-                  <Link to="/products/arthap2p">
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full px-6 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-indigo-500/50 transition-all flex items-center justify-center gap-2"
-                    >
-                      Explore ArthaP2Pay
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.button>
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-
-            {/* ArthaMatch */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="group relative"
-            >
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-600 rounded-3xl blur-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-500" />
-              
-              <div className="relative h-full bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden">
-                {/* Header */}
-                <div className="p-10 border-b border-white/10">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-cyan-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
-                    <Shield className="w-10 h-10 text-white" />
-                  </div>
-                  <h2 className="text-4xl font-bold text-white mb-4">ArthaMatch</h2>
-                  <p className="text-lg text-gray-300 mb-6">
-                    Intelligent reconciliation engine
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full">
-                    <span className="text-sm text-blue-300 font-medium">Bank Reconciliation AI</span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-10">
-                  <h3 className="text-xl font-bold text-white mb-4">Key Features</h3>
-                  <ul className="space-y-4 mb-8">
-                    {[
-                      'Smart bank-ledger reconciliation',
-                      'ML-powered transaction matching',
-                      'Automated discrepancy detection',
-                      'Multi-currency support',
-                      'Audit-ready reports and trails',
-                      'Integration with all major banks',
-                    ].map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3 text-gray-300">
-                        <CheckCircle2 className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="grid grid-cols-3 gap-4 mb-8 p-6 bg-white/5 rounded-xl">
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-white mb-1">85%</div>
-                      <div className="text-xs text-gray-400">Time Saved</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-white mb-1">100K+</div>
-                      <div className="text-xs text-gray-400">Transactions</div>
-                    </div>
-                    <div className="text-center">
-                      <div className="text-2xl font-bold text-white mb-1">24/7</div>
-                      <div className="text-xs text-gray-400">Automation</div>
-                    </div>
-                  </div>
-
-                  <Link to="/products/arthamatch">
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full px-6 py-4 bg-gradient-to-r from-blue-600 to-cyan-600 text-white rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-blue-500/50 transition-all flex items-center justify-center gap-2"
-                    >
-                      Explore ArthaMatch
-                      <ArrowRight className="w-5 h-5" />
-                    </motion.button>
-                  </Link>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Comparison Section */}
-      <section className="py-32 bg-[#111827]">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl font-bold text-white mb-6">
-              Why Choose
-              <span className="bg-gradient-to-r from-indigo-400 to-blue-400 bg-clip-text text-transparent">
-                {' '}Arthveda
-              </span>
-            </h2>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                icon: TrendingUp,
-                title: 'Proven ROI',
-                description: 'Average 10x return on investment within first year',
-                gradient: 'from-indigo-500 to-purple-600',
-              },
-              {
-                icon: Zap,
-                title: 'Rapid Deployment',
-                description: 'Go live in weeks, not months with our quick implementation',
-                gradient: 'from-blue-500 to-cyan-600',
-              },
-              {
-                icon: Shield,
-                title: 'Enterprise Security',
-                description: 'Bank-grade encryption and SOC 2 Type II certified',
-                gradient: 'from-violet-500 to-indigo-600',
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="p-8 bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl"
-              >
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-6`}>
-                  <item.icon className="w-7 h-7 text-white" />
-                </div>
-                <h3 className="text-2xl font-bold text-white mb-3">{item.title}</h3>
-                <p className="text-gray-400">{item.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-b from-[#111827] to-[#0B1120] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.5, 0.3],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Infinity,
-            }}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-indigo-500 to-blue-500 rounded-full blur-3xl"
+          {/* ArthaP2P */}
+          <ProductCard
+            title="ArthaP2Pay"
+            description="Complete vendor portal automation platform"
+            badge="Procure-to-Pay Automation"
+            icon={Zap}
+            gradient="from-indigo-500 to-purple-600"
+            headerGradient="from-indigo-50 to-purple-50"
+            badgeStyle="bg-indigo-100 border-indigo-200 text-indigo-700"
+            iconGradient="from-indigo-500 to-purple-600"
+            buttonGradient="from-indigo-600 to-purple-600"
+            featureIconColor="text-indigo-500"
+            link="/products/arthap2p"
+            features={[
+              "AI-powered PO to Invoice matching",
+              "Automated ERP bill creation",
+              "Real-time vendor portal",
+              "Exception management",
+              "Multi-level approval workflows",
+              "ERP integration (SAP, Oracle, Zoho)",
+            ]}
+            stats={[
+              { value: "90%", label: "Faster Processing" },
+              { value: "99.9%", label: "Accuracy" },
+              { value: "10K+", label: "POs/Month" },
+            ]}
           />
+
+          {/* ArthaMatch */}
+          <ProductCard
+            title="ArthaMatch"
+            description="Intelligent reconciliation engine"
+            badge="Bank Reconciliation AI"
+            icon={Shield}
+            gradient="from-blue-500 to-cyan-600"
+            headerGradient="from-blue-50 to-cyan-50"
+            badgeStyle="bg-blue-100 border-blue-200 text-blue-700"
+            iconGradient="from-blue-500 to-cyan-600"
+            buttonGradient="from-blue-600 to-cyan-600"
+            featureIconColor="text-blue-500"
+            link="/products/arthamatch"
+            features={[
+              "Smart bank-ledger reconciliation",
+              "ML-powered transaction matching",
+              "Automated discrepancy detection",
+              "Multi-currency support",
+              "Audit-ready reports",
+              "Bank integrations",
+            ]}
+            stats={[
+              { value: "85%", label: "Time Saved" },
+              { value: "100K+", label: "Transactions" },
+              { value: "24/7", label: "Automation" },
+            ]}
+          />
+
+          {/* Accounts Receivable */}
+          <ProductCard
+            title="Accounts Receivable"
+            description="Accelerate your cash flow"
+            badge="AI Collections Engine"
+            icon={Wallet}
+            gradient="from-purple-500 to-indigo-600"
+            headerGradient="from-purple-50 to-indigo-50"
+            badgeStyle="bg-purple-100 border-purple-200 text-purple-700"
+            iconGradient="from-purple-500 to-indigo-600"
+            buttonGradient="from-purple-600 to-indigo-600"
+            featureIconColor="text-purple-500"
+            link="/products/arthaAR"
+            features={[
+              "Automated payment reminders",
+              "Collections prioritization",
+              "Customer payment insights",
+              "Smart invoice follow-ups",
+              "Receivable dashboard",
+              "ERP integrations",
+            ]}
+            stats={[
+              { value: "40%", label: "Faster Payments" },
+              { value: "60%", label: "Reduced DSO" },
+              { value: "24/7", label: "Automation" },
+            ]}
+          />
+
+          {/* Expense Management */}
+          <ProductCard
+            title="Expense Management"
+            description="Policy-first spending control"
+            badge="AI Spend Intelligence"
+            icon={Receipt}
+            gradient="from-green-500 to-emerald-600"
+            headerGradient="from-green-50 to-emerald-50"
+            badgeStyle="bg-green-100 border-green-200 text-green-700"
+            iconGradient="from-green-500 to-emerald-600"
+            buttonGradient="from-green-600 to-emerald-600"
+            featureIconColor="text-green-500"
+            link="/products/arthaEM"
+            features={[
+              "Receipt scanning",
+              "Fraud detection",
+              "Real-time expense visibility",
+              "Policy compliance automation",
+              "Reimbursement workflows",
+              "Corporate card integrations",
+            ]}
+            stats={[
+              { value: "3x", label: "Faster Approvals" },
+              { value: "95%", label: "Accuracy" },
+              { value: "100%", label: "Policy Control" },
+            ]}
+          />
+
+        </div>
+
+        {/* E-Invoicing centered */}
+        <div className="flex justify-center mt-12">
+          <div className="lg:w-1/2">
+            <ProductCard
+              title="E-Invoicing"
+              description="Global compliance automation"
+              badge="Tax Compliance Engine"
+              icon={FileText}
+              gradient="from-orange-500 to-red-600"
+              headerGradient="from-orange-50 to-red-50"
+              badgeStyle="bg-orange-100 border-orange-200 text-orange-700"
+              iconGradient="from-orange-500 to-red-600"
+              buttonGradient="from-orange-600 to-red-600"
+              featureIconColor="text-orange-500"
+              link="/products/arthaEInvoice"
+              features={[
+                "Automated e-invoice generation",
+                "Multi-country tax compliance",
+                "GST and VAT integrations",
+                "Real-time validation",
+                "Digital signature support",
+                "ERP integrations",
+              ]}
+              stats={[
+                { value: "120+", label: "Countries" },
+                { value: "99%", label: "Compliance" },
+                { value: "Instant", label: "Validation" },
+              ]}
+            />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+        {/* Comparison Section */}
+        <section className="py-32 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-16"
+
+            >
+              <h2 className="text-5xl font-bold text-gray-900 mb-6">
+                Why Choose
+                <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
+                  {' '}Arthveda
+                </span>
+              </h2>
+            </motion.div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: TrendingUp,
+                  title: 'Proven ROI',
+                  description: 'Average 10x return on investment within first year',
+                  gradient: 'from-indigo-500 to-purple-600',
+                },
+                {
+                  icon: Zap,
+                  title: 'Rapid Deployment',
+                  description: 'Go live in weeks, not months with our quick implementation',
+                  gradient: 'from-blue-500 to-cyan-600',
+                },
+                {
+                  icon: Shield,
+                  title: 'Enterprise Security',
+                  description: 'Bank-grade encryption and SOC 2 Type II certified',
+                  gradient: 'from-violet-500 to-indigo-600',
+                },
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="p-8 bg-white border border-gray-200 rounded-2xl hover:shadow-xl transition-all"
+                >
+                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-6 shadow-md`}>
+                    <item.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                  <p className="text-gray-600">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
+        {/* CTA Section */}
+        <section className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <motion.div
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.3, 0.5, 0.3],
+              }}
+              transition={{
+                duration: 8,
+                repeat: Infinity,
+              }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-indigo-200 to-blue-200 rounded-full blur-3xl"
+            />
         </div>
 
         <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
@@ -282,31 +288,34 @@ export default function ProductsPage() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl font-bold text-white mb-6"
+            className="text-5xl font-bold text-gray-900 mb-6"
           >
-            Ready to Transform Your Finance Operations?
+            Need more than just a software?
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-400 mb-12"
+            className="text-xl text-gray-600 mb-12"
           >
-            Schedule a demo to see our products in action
+            Our Artha Advisory team provides the strategic oversight to help you implement these solutions at scale.
           </motion.p>
+          <Link to= "/services">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-12 py-5 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-2xl font-bold text-xl shadow-2xl shadow-indigo-500/50 inline-flex items-center gap-3"
           >
-            Schedule Demo
+            Explore Advisory Services
             <ArrowRight className="w-6 h-6" />
           </motion.button>
+          </Link>
         </div>
       </section>
 
       <Footer />
     </div>
+    </PageLayout>
   );
 }
