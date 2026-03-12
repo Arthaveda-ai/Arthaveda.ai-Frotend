@@ -100,43 +100,44 @@ export default function ResourcesPage() {
         <Navbar />
 
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
-          <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
-          
-          <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 border border-indigo-200 rounded-full mb-8"
-            >
-              <BookOpen className="w-4 h-4 text-indigo-600" />
-              <span className="text-sm text-indigo-700 font-medium">Resources & Insights</span>
-            </motion.div>
+<section className="relative pt-25 pb-10 overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
+  <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
-            >
-              Knowledge Hub for
-              <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-                {' '}Finance Leaders
-              </span>
-            </motion.h1>
+  <div className="relative z-10 max-w-2xl mx-auto px-3 text-center" >
+    <motion.div
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="inline-flex items-center gap-1 px-2 py-1 bg-indigo-100 border border-indigo-200 rounded-full mb-4"
+    >
+      <BookOpen className="w-2 h-2 text-indigo-600" />
+      <span className="text-xs text-indigo-700 font-medium">Resources & Insights</span>
+    </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
-            >
-              Insights, case studies, and guides to help you stay ahead in the world of finance automation and strategic planning.
-            </motion.p>
-          </div>
-        </section>
+    <motion.h1
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.1 }}
+      className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight"
+    >
+      Knowledge Hub for
+      <br />              
+      <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+        {'    '}Finance Leaders
+      </span>
+    </motion.h1>
+
+    <motion.p
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+      className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed"
+    >
+      Insights, case studies, and guides to help you stay ahead in the world of finance automation and strategic planning.
+    </motion.p>
+  </div>
+</section>
 
         {/* Blog Posts Section */}
         <section className="py-32 bg-white">

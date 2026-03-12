@@ -30,36 +30,36 @@ export default function ArthaTaxPage() {
         <Navbar />
 
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
+        <section className="relative min-h-[35vh] flex items-center justify-center overflow-hidden pt-20">
           <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50" />
-          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 border border-slate-200 rounded-full mb-8">
-                <Scale className="w-4 h-4 text-slate-600" />
-                <span className="text-sm text-slate-700 font-medium">Tax Compliance Automation</span>
+          <div className="relative z-10 max-w-3xl mx-auto px-3 py-10 text-center">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="inline-flex items-center gap-1 px-2 py-1 bg-slate-100 border border-slate-200 rounded-full mb-4">
+                <Scale className="w-2 h-2 text-slate-600" />
+                <span className="text-xs text-slate-700 font-medium">Tax Compliance Automation</span>
               </div>
             </motion.div>
 
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-              className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight">
-              ArthaTax
+            <motion.h1 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+              className="text-3xl md:text-4xl lg:text-4xl font-bold text-foreground mb-3 leading-tight">
+              Artha E-Invoicing
             </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
+            <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+              className="text-sm md:text-base text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed">
               Automate GST, TDS, and income tax compliance with intelligent computation, validation, and filing. Stay compliant, always.
             </motion.p>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-2 justify-center items-center">
               <Link to="/contact">
                 <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-slate-700 to-gray-800 text-white rounded-2xl font-semibold text-lg shadow-lg shadow-slate-500/30 flex items-center gap-2">
+                  className="px-4 py-2 bg-gradient-to-r from-slate-700 to-gray-800 text-white rounded-xl font-semibold text-sm shadow-lg shadow-slate-500/30 flex items-center gap-1">
                   Request Demo <ArrowRight className="w-5 h-5" />
                 </motion.button>
               </Link>
               <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-background border-2 border-border text-foreground rounded-2xl font-semibold text-lg hover:shadow-md transition-all">
+                className="px-4 py-2 bg-background border-2 border-border text-foreground rounded-xl font-semibold text-sm hover:shadow-md transition-all">
                 View Pricing
               </motion.button>
             </motion.div>
