@@ -32,7 +32,6 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      {/* Hero Section */}
 <section className="relative pt-40 pb-18 overflow-hidden">
   <div className="absolute inset-0">
     <motion.div
@@ -177,8 +176,8 @@ export default function ContactPage() {
                   {
                     icon: Mail,
                     title: "Email",
-                    value: "shreyas.kumar@arthaveda.ai",
-                    link: "mailto:shreyas.kumar@arthaveda.ai",
+                    value: "contact@arthaveda.ai",
+                    link: "mailto:contact@arthaveda.ai",
                     gradient: "from-indigo-500 to-purple-600",
                   },
                   {

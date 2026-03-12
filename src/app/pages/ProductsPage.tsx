@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Zap, Shield, TrendingUp, CheckCircle2, Wallet, Receipt, FileText,} from 'lucide-react';
+import { ArrowRight, Zap, Shield, TrendingUp, CheckCircle2, Wallet, Receipt, FileText,Scale, CheckCheck} from 'lucide-react';
 import { Navbar } from '../components/arthveda/Navbar';
 import { Footer } from '../components/arthveda/Footer';
 import { PageLayout } from '../components/PageLayout';
@@ -14,7 +14,7 @@ export default function ProductsPage() {
 
       {/* Hero Section */}
       <section className="relative min-h-[25vh] flex items-center justify-center overflow-hidden pt-8">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" /> 
         <div className="absolute inset-0 blur-3xl">
           <motion.div
             animate={{
@@ -29,12 +29,20 @@ export default function ProductsPage() {
             style={{ backgroundSize: '200% 200%' }}
           />
         </div>
-
         <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-1 px-2 py-1 bg-indigo-100 border border-indigo-200 rounded-full mb-4"
+          >
+            <CheckCheck className="w-2 h-2 text-indigo-600" />
+            <span className="text-xs text-indigo-700 font-medium">Resources for Success</span>
+          </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+            className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight"
           >
             Intelligent Finance
             <br />
@@ -47,7 +55,7 @@ export default function ProductsPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
+            className="text-sm text-gray-600 mb-4 max-w-xl mx-auto"
           >
             Purpose-built SaaS solutions that automate complex finance workflows with AI precision
           </motion.p>

@@ -68,7 +68,7 @@ export default function ArthaExpensePage() {
 </section>
 
         {/* Challenge */}
-        <section className="py-32 bg-background border-t border-border">
+        <section className="py-10 bg-background border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-orange-600">Challenge</span></h2>
@@ -91,7 +91,7 @@ export default function ArthaExpensePage() {
         </section>
 
         {/* Solution */}
-        <section className="py-32 bg-muted border-t border-border">
+        <section className="py-10 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-orange-600">Solution</span></h2>
@@ -151,8 +151,8 @@ export default function ArthaExpensePage() {
         </section>
 
         {/* Workflow */}
-        <section className="py-32 bg-background border-t border-border">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="py-10 bg-background border-t border-border">
+          <div className="max-w-[115vh] mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
               <h2 className="text-5xl font-bold text-foreground mb-6">How It <span className="text-orange-600">Works</span></h2>
               <p className="text-xl text-muted-foreground">From expense to reimbursement — fully automated</p>
@@ -186,7 +186,7 @@ export default function ArthaExpensePage() {
         </section>
 
         {/* Features */}
-        <section className="py-32 bg-muted border-t border-border">
+        <section className="py-10 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">Powerful <span className="text-orange-600">Features</span></h2>
@@ -215,7 +215,7 @@ export default function ArthaExpensePage() {
         </section>
 
         {/* CTA */}
-        <section className="py-32 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden border-t border-border">
+        <section className="py-10 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden border-t border-border">
           <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
             <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className="text-5xl font-bold text-foreground mb-6">Ready to Control Your Spend?</motion.h2>

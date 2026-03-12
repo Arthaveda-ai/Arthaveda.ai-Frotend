@@ -95,6 +95,15 @@ export default function ServicesPage() {
   </div>
 
   <div className="relative z-10 max-w-2xl mx-auto px-3 text-center" >
+    <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-1 px-2 py-1 bg-indigo-100 border border-indigo-200 rounded-full mb-4"
+          >
+            <Scale className="w-2 h-2 text-indigo-600" />
+            <span className="text-xs text-indigo-700 font-medium">Advisory & Support</span>
+          </motion.div>
     <motion.h1
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}

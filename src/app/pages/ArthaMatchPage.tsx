@@ -67,7 +67,7 @@ export default function ArthaMatchPage() {
 </section>
 
         {/* Challenge */}
-        <section className="py-32 bg-background border-t border-border">
+        <section className="py-10 bg-background border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-sky-600">Challenge</span></h2>
@@ -90,7 +90,7 @@ export default function ArthaMatchPage() {
         </section>
 
         {/* Solution */}
-        <section className="py-32 bg-muted border-t border-border">
+        <section className="py-10 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-sky-600">Solution</span></h2>
@@ -150,8 +150,8 @@ export default function ArthaMatchPage() {
         </section>
 
         {/* Workflow */}
-        <section className="py-32 bg-background border-t border-border">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="py-10 bg-background border-t border-border">
+          <div className="max-w-[115vh] mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
               <h2 className="text-5xl font-bold text-foreground mb-6">How It <span className="text-sky-600">Works</span></h2>
               <p className="text-xl text-muted-foreground">From raw data to reconciled reports in minutes</p>
@@ -185,7 +185,7 @@ export default function ArthaMatchPage() {
         </section>
 
         {/* Features */}
-        <section className="py-32 bg-muted border-t border-border">
+        <section className="py-10 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">Powerful <span className="text-sky-600">Features</span></h2>
@@ -214,7 +214,7 @@ export default function ArthaMatchPage() {
         </section>
 
         {/* Use Cases */}
-        <section className="py-32 bg-background border-t border-border">
+        <section className="py-10 bg-background border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">Perfect For</h2>
@@ -242,7 +242,7 @@ export default function ArthaMatchPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-32 bg-gradient-to-br from-sky-50 via-cyan-50 to-teal-50 relative overflow-hidden border-t border-border">
+        <section className="py-10 bg-gradient-to-br from-sky-50 via-cyan-50 to-teal-50 relative overflow-hidden border-t border-border">
           <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
             <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className="text-5xl font-bold text-foreground mb-6">Ready to Automate Reconciliation?</motion.h2>
