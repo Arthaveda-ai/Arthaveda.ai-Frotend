@@ -4,7 +4,7 @@ import { Navbar } from '../components/arthveda/Navbar';
 import { Footer } from '../components/arthveda/Footer';
 import { PageLayout } from '../components/PageLayout';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
-import { ScrollToTop } from '../components/ScrollToTop';
+{/*import { ScrollToTop } from '../components/ScrollToTop';*/}
 import { Link } from 'react-router';
 
 export default function AboutPage() {
@@ -65,29 +65,29 @@ export default function AboutPage() {
   return (
     <PageLayout>
       <div className="min-h-screen bg-white">
-        <ScrollToTop />
+        {/*<ScrollToTop />*/}
         <Navbar />
         {/* Hero Section */}
-        <section className="relative pt-32 pb-20 overflow-hidden">
+        <section className="relative pt-25 pb-10 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
           
-          <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
+          <div className="relative z-10 max-w-2xl mx-auto px-3 text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-indigo-100 border border-indigo-200 rounded-full mb-8"
+              className="inline-flex items-center gap-1 px-2 py-1 bg-indigo-100 border border-indigo-200 rounded-full mb-4"
             >
-              <Brain className="w-4 h-4 text-indigo-600" />
-              <span className="text-sm text-indigo-700 font-medium">About Arthveda.ai</span>
+              <Brain className="w-2 h-2 text-indigo-600" />
+              <span className="text-xs text-indigo-700 font-medium">About Arthveda.ai</span>
             </motion.div>
 
             <motion.h1
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+              className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight"
             >
               Transforming Finance Through
               <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -96,10 +96,10 @@ export default function AboutPage() {
             </motion.h1>
 
             <motion.p
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed"
             >
               We're a unique blend of strategic finance consultants and product builders, 
               helping businesses scale with intelligent automation and expert advisory.
