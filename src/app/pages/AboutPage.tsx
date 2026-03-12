@@ -68,7 +68,7 @@ export default function AboutPage() {
         {/*<ScrollToTop />*/}
         <Navbar />
         {/* Hero Section */}
-        <section className="relative pt-25 pb-10 overflow-hidden">
+        <section className="relative pt-10 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
           <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
           
@@ -108,7 +108,7 @@ export default function AboutPage() {
         </section>
 
         {/* Stats Section */}
-        <section className="py-20 bg-white">
+        <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -131,7 +131,7 @@ export default function AboutPage() {
         </section>
 
         {/* Our Story Section */}
-        <section className="py-32 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-12 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-5xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -169,7 +169,7 @@ export default function AboutPage() {
         </section>
 
         {/* Team Section */}
-        <section className="py-32 bg-gray-50">
+        <section className="py-12 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -234,7 +234,7 @@ export default function AboutPage() {
         </section>
 
         {/* Values Section */}
-        <section className="py-32 bg-white">
+        <section className="py-12 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -275,7 +275,7 @@ export default function AboutPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 relative overflow-hidden">
+        <section className="py-12 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 relative overflow-hidden">
           <div className="absolute inset-0">
             <motion.div
               animate={{

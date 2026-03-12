@@ -100,7 +100,7 @@ export default function ResourcesPage() {
         <Navbar />
 
         {/* Hero Section */}
-<section className="relative pt-25 pb-10 overflow-hidden">
+<section className="relative pt-12 overflow-hidden">
   <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
   <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
 
@@ -140,7 +140,7 @@ export default function ResourcesPage() {
 </section>
 
         {/* Blog Posts Section */}
-        <section className="py-32 bg-white">
+        <section className="py-10 bg-white">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -215,7 +215,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* Case Studies Section */}
-        <section className="py-32 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-10 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -292,7 +292,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* Whitepapers Section */}
-        <section className="py-32 bg-gray-50">
+        <section className="py-10 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -360,7 +360,7 @@ export default function ResourcesPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 relative overflow-hidden">
+        <section className="py-10 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50 relative overflow-hidden">
           <div className="absolute inset-0">
             <motion.div
               animate={{
