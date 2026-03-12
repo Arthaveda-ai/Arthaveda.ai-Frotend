@@ -32,44 +32,35 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20">
-        <div className="absolute inset-0">
-          <motion.div
-            animate={{
-              backgroundPosition: ['0% 0%', '100% 100%'],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              repeatType: 'reverse',
-            }}
-            className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50"
-            style={{ backgroundSize: '200% 200%' }}
-          />
-        </div>
-
-        <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-20 text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-tight"
-          >
-            Get in
-            <span className="text-indigo-600">
-              {' '}Touch
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-lg sm:text-xl text-gray-400 mb-8 max-w-3xl mx-auto px-4"
-          >
-            Ready to transform your finance operations? Let's discuss how Arthveda.ai can help your business grow.
-          </motion.p>
-        </div>
-      </section>
+      {/* Hero Section */}
+<section className="relative pt-40 pb-18 overflow-hidden">
+  <div className="absolute inset-0">
+    <motion.div
+      animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+      transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
+      className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50"
+      style={{ backgroundSize: '200% 200%' }}
+    />
+  </div>
+  <div className="relative z-10 max-w-2xl mx-auto px-3 text-center">
+    <motion.h1
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight"
+    >
+      Get in
+      <span className="text-indigo-600">{' '}Touch</span>
+    </motion.h1>
+    <motion.p
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 }}
+      className="text-sm text-gray-400 mb-4 max-w-xl mx-auto px-3"
+    >
+      Ready to transform your finance operations? Let's discuss how Arthveda.ai can help your business grow.
+    </motion.p>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section className="py-20 bg-white">

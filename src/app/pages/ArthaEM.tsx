@@ -29,42 +29,43 @@ export default function ArthaExpensePage() {
       <div className="min-h-screen bg-background">
         <Navbar />
 
-        {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50" />
-          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-orange-100 border border-orange-200 rounded-full mb-8">
-                <CreditCard className="w-4 h-4 text-orange-600" />
-                <span className="text-sm text-orange-700 font-medium">Spend Management Platform</span>
-              </div>
-            </motion.div>
+        
+ {/* Hero */}
+ <section className="relative min-h-[35vh] flex items-center justify-center overflow-hidden pt-20">
+  <div className="absolute inset-0 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50" />
+  <div className="relative z-10 max-w-3xl mx-auto px-3 py-10 text-center" >
+    <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
+      <div className="inline-flex items-center gap-1 px-2 py-1 bg-orange-100 border border-orange-200 rounded-full mb-4">
+        <CreditCard className="w-2 h-2 text-orange-600" />
+        <span className="text-xs text-orange-700 font-medium">Spend Management Platform</span>
+      </div>
+    </motion.div>
 
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-              className="text-6xl md:text-7xl lg:text-8xl font-bold text-foreground mb-6 leading-tight">
-              ArthaExpense
-            </motion.h1>
+    <motion.h1 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+      className="text-3xl md:text-4xl font-bold text-foreground mb-3 leading-tight">
+      ArthaExpense
+    </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-              Complete spend visibility and control. From expense capture to policy enforcement to reimbursement — all automated with intelligent controls.
-            </motion.p>
+    <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+      className="text-sm md:text-base text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed">
+      Complete spend visibility and control. From expense capture to policy enforcement to reimbursement — all automated with intelligent controls.
+    </motion.p>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/contact">
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-2xl font-semibold text-lg shadow-lg shadow-orange-500/30 flex items-center gap-2">
-                  Request Demo <ArrowRight className="w-5 h-5" />
-                </motion.button>
-              </Link>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-background border-2 border-border text-foreground rounded-2xl font-semibold text-lg hover:shadow-md transition-all">
-                View Pricing
-              </motion.button>
-            </motion.div>
-          </div>
-        </section>
+    <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+      className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+      <Link to="/contact">
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+          className="px-4 py-2 bg-gradient-to-r from-orange-600 to-red-600 text-white rounded-xl font-semibold text-sm shadow-lg shadow-orange-500/30 flex items-center gap-1">
+          Request Demo <ArrowRight className="w-3 h-3" />
+        </motion.button>
+      </Link>
+      <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+        className="px-4 py-2 bg-background border-2 border-border text-foreground rounded-xl font-semibold text-sm hover:shadow-md transition-all">
+        View Pricing
+      </motion.button>
+    </motion.div>
+  </div>
+</section>
 
         {/* Challenge */}
         <section className="py-32 bg-background border-t border-border">

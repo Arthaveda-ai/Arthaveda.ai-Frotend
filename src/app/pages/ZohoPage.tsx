@@ -30,42 +30,42 @@ export default function ZohoRolloutsPage() {
         <Navbar />
 
         {/* Hero */}
-        <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-amber-50" />
-          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 text-center">
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 border border-blue-200 rounded-full mb-4">
-                <Building2 className="w-4 h-4 text-blue-600" />
-                <span className="text-sm text-blue-700 font-medium">Authorized Zoho Partner</span>
-              </div>
-            </motion.div>
+<section className="relative pt-25 pb-8 overflow-hidden">
+  <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-indigo-50 to-amber-50" />
+  <div className="relative z-10 max-w-2xl mx-auto px-3 text-center" >
+    <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
+      <div className="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 border border-blue-200 rounded-full mb-4">
+        <Building2 className="w-2 h-2 text-blue-600" />
+        <span className="text-xs text-blue-700 font-medium">Authorized Zoho Partner</span>
+      </div>
+    </motion.div>
 
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-              CFO-Led <span className="text-blue-600">Zoho</span>{' '}
-              <span className="text-amber-600">Implementations</span>
-            </motion.h1>
+    <motion.h1 initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+      className="text-2xl md:text-4xl font-bold text-foreground mb-3 leading-tight">
+      CFO-Led <span className="text-blue-600">Zoho</span>{' '}
+      <span className="text-amber-600">Implementations</span>
+    </motion.h1>
 
-            <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-4xl mx-auto leading-relaxed">
-              Not just a technical rollout — a strategic finance transformation. We bring CFO-level thinking to every Zoho implementation, ensuring your ERP serves your business strategy.
-            </motion.p>
+    <motion.p initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
+      className="text-sm text-muted-foreground mb-6 max-w-xl mx-auto leading-relaxed">
+      Not just a technical rollout — a strategic finance transformation. We bring CFO-level thinking to every Zoho implementation, ensuring your ERP serves your business strategy.
+    </motion.p>
 
-            <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link to="/contact">
-                <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl font-semibold text-lg shadow-lg shadow-blue-500/30 flex items-center gap-2">
-                  Schedule Consultation <ArrowRight className="w-5 h-5" />
-                </motion.button>
-              </Link>
-              <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-background border-2 border-border text-foreground rounded-2xl font-semibold text-lg hover:shadow-md transition-all">
-                View Case Studies
-              </motion.button>
-            </motion.div>
-          </div>
-        </section>
+    <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}
+      className="flex flex-col sm:flex-row gap-2 justify-center items-center">
+      <Link to="/contact">
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+          className="px-4 py-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold text-sm shadow-lg shadow-blue-500/30 flex items-center gap-1">
+          Schedule Consultation <ArrowRight className="w-3 h-3" />
+        </motion.button>
+      </Link>
+      <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
+        className="px-4 py-2 bg-background border-2 border-border text-foreground rounded-xl font-semibold text-sm hover:shadow-md transition-all">
+        View Case Studies
+      </motion.button>
+    </motion.div>
+  </div>
+</section>
 
         {/* Why CFO-Led */}
         <section className="py-32 bg-background border-t border-border">

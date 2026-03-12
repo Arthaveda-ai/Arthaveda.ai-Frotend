@@ -83,46 +83,40 @@ export default function ServicesPage() {
         <Navbar />
 
         {/* Hero Section */}
-        <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
-          <div className="absolute inset-0">
-            <motion.div
-              animate={{
-                backgroundPosition: ['0% 0%', '100% 100%'],
-              }}
-              transition={{
-                duration: 20,
-                repeat: Infinity,
-                repeatType: 'reverse',
-              }}
-              className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50"
-              style={{ backgroundSize: '200% 200%' }}
-            />
-            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
-          </div>
+<section className="relative pt-30 pb-20 overflow-hidden">
+  <div className="absolute inset-0">
+    <motion.div
+      animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+      transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
+      className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50"
+      style={{ backgroundSize: '200% 200%' }}
+    />
+    <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
+  </div>
 
-          <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
-            >
-              Strategic Advisory
-              <br />
-              <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-                Services
-              </span>
-            </motion.h1>
+  <div className="relative z-10 max-w-2xl mx-auto px-3 text-center" >
+    <motion.h1
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      className="text-2xl md:text-4xl font-bold text-gray-900 mb-3 leading-tight"
+    >
+      Strategic Advisory
+      <br />
+      <span className="bg-gradient-to-r from-indigo-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+        Services
+      </span>
+    </motion.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
-            >
-              CFO-level expertise combined with deep operational knowledge to drive financial excellence
-            </motion.p>
-          </div>
-        </section>
+    <motion.p
+      initial={{ opacity: 0, y: 15 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.1 }}
+      className="text-sm text-gray-600 mb-4 max-w-xl mx-auto leading-relaxed"
+    >
+      CFO-level expertise combined with deep operational knowledge to drive financial excellence
+    </motion.p>
+  </div>
+</section>
 
         {/* Services Detail Section */}
         <section className="py-20 bg-gradient-to-b from-white to-gray-50">
