@@ -95,7 +95,7 @@ export default function ArthaComplyPage() {
           </div>
         </section>
         {/* Challenge */}
-        <section className="py-32 bg-background border-t border-border">
+        <section className="py-10 bg-background border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-indigo-600">Challenge</span></h2>
@@ -118,7 +118,7 @@ export default function ArthaComplyPage() {
         </section>
 
         {/* Solution */}
-        <section className="py-32 bg-muted border-t border-border">
+        <section className="py-10 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-indigo-600">Solution</span></h2>
@@ -190,8 +190,8 @@ export default function ArthaComplyPage() {
         </section>
 
         {/* Workflow */}
-        <section className="py-32 bg-background border-t border-border">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="py-10 bg-background border-t border-border">
+          <div className="max-w-[115vh] mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
               <h2 className="text-5xl font-bold text-foreground mb-6">How It <span className="text-indigo-600">Works</span></h2>
               <p className="text-xl text-muted-foreground">From entity onboarding to board-ready compliance reporting</p>
@@ -225,7 +225,7 @@ export default function ArthaComplyPage() {
         </section>
 
         {/* Who It's Built For */}
-        <section className="py-32 bg-muted border-t border-border">
+        <section className="py-10 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">Built For <span className="text-indigo-600">Complex Structures</span></h2>
@@ -260,7 +260,7 @@ export default function ArthaComplyPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-32 bg-gradient-to-br from-indigo-50 via-violet-50 to-purple-50 relative overflow-hidden border-t border-border">
+        <section className="py-10 bg-gradient-to-br from-indigo-50 via-violet-50 to-purple-50 relative overflow-hidden border-t border-border">
           <div className="absolute inset-0 opacity-20"
             style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #a5b4fc 1px, transparent 0)', backgroundSize: '40px 40px' }} />
           <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">

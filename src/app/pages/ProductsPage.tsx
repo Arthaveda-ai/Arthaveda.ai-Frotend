@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Zap, Shield, TrendingUp, CheckCircle2, Wallet, Receipt, FileText, Scale } from 'lucide-react';
+import { ArrowRight, Zap, Shield, TrendingUp, CheckCircle2, Wallet, Receipt, FileText,Scale, CheckCheck} from 'lucide-react';
 import { Navbar } from '../components/arthveda/Navbar';
 import { Footer } from '../components/arthveda/Footer';
 import { PageLayout } from '../components/PageLayout';
@@ -108,33 +108,223 @@ export default function ProductsPage() {
       <div className="min-h-screen bg-white">
         <Navbar />
 
-        {/* Hero */}
-        <section className="relative min-h-[25vh] flex items-center justify-center overflow-hidden pt-8">
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
+      {/* Hero Section */}
+      <section className="relative min-h-[25vh] flex items-center justify-center overflow-hidden pt-8">
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" /> 
+        <div className="absolute inset-0 blur-3xl">
           <motion.div
             animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
             transition={{ duration: 20, repeat: Infinity, repeatType: 'reverse' }}
             className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50"
             style={{ backgroundSize: '200% 200%' }}
           />
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 py-16 sm:py-20 text-center">
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight"
-            >
-              Intelligent Finance
-              <br />
-              <span className="text-indigo-600">Automation Solutions</span>
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-sm sm:text-base md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto"
-            >
-              Purpose-built SaaS solutions that automate complex finance workflows with AI precision
-            </motion.p>
+        </div>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="inline-flex items-center gap-1 px-2 py-1 bg-indigo-100 border border-indigo-200 rounded-full mb-4"
+          >
+            <CheckCheck className="w-2 h-2 text-indigo-600" />
+            <span className="text-xs text-indigo-700 font-medium">Resources for Success</span>
+          </motion.div>
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="text-2xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight"
+          >
+            Intelligent Finance
+            <br />
+            <span className="text-indigo-600">
+              Automation Solutions
+            </span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-sm text-gray-600 mb-4 max-w-xl mx-auto"
+          >
+            Purpose-built SaaS solutions that automate complex finance workflows with AI precision
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Products Grid */}
+      <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+      <div className="max-w-[140vh] mx-auto px-6">
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+          {/* ArthaP2P */}
+          <ProductCard
+            title="ArthaP2Pay"
+            description="Complete vendor portal automation platform"
+            badge="Procure-to-Pay Automation"
+            icon={Zap}
+            gradient="from-indigo-500 to-purple-600"
+            headerGradient="from-indigo-50 to-purple-50"
+            badgeStyle="bg-indigo-100 border-indigo-200 text-indigo-700"
+            iconGradient="from-indigo-500 to-purple-600"
+            buttonGradient="from-indigo-600 to-purple-600"
+            featureIconColor="text-indigo-500"
+            link="/products/arthap2p"
+            features={[
+              "AI-powered PO to Invoice matching",
+              "Automated ERP bill creation",
+              "Real-time vendor portal",
+              "Exception management",
+              "Multi-level approval workflows",
+              "ERP integration (SAP, Oracle, Zoho)",
+            ]}
+            stats={[
+              { value: "90%", label: "Faster Processing" },
+              { value: "99.9%", label: "Accuracy" },
+              { value: "10K+", label: "POs/Month" },
+            ]}
+          />
+
+          {/* ArthaMatch */}
+          <ProductCard
+            title="ArthaMatch"
+            description="Intelligent reconciliation engine"
+            badge="Bank Reconciliation AI"
+            icon={Shield}
+            gradient="from-blue-500 to-cyan-600"
+            headerGradient="from-blue-50 to-cyan-50"
+            badgeStyle="bg-blue-100 border-blue-200 text-blue-700"
+            iconGradient="from-blue-500 to-cyan-600"
+            buttonGradient="from-blue-600 to-cyan-600"
+            featureIconColor="text-blue-500"
+            link="/products/arthamatch"
+            features={[
+              "Smart bank-ledger reconciliation",
+              "ML-powered transaction matching",
+              "Automated discrepancy detection",
+              "Multi-currency support",
+              "Audit-ready reports",
+              "Bank integrations",
+            ]}
+            stats={[
+              { value: "85%", label: "Time Saved" },
+              { value: "100K+", label: "Transactions" },
+              { value: "24/7", label: "Automation" },
+            ]}
+          />
+
+          {/* Accounts Receivable */}
+          <ProductCard
+            title="Accounts Receivable"
+            description="Accelerate your cash flow"
+            badge="AI Collections Engine"
+            icon={Wallet}
+            gradient="from-purple-500 to-indigo-600"
+            headerGradient="from-purple-50 to-indigo-50"
+            badgeStyle="bg-purple-100 border-purple-200 text-purple-700"
+            iconGradient="from-purple-500 to-indigo-600"
+            buttonGradient="from-purple-600 to-indigo-600"
+            featureIconColor="text-purple-500"
+            link="/products/arthaAR"
+            features={[
+              "Automated payment reminders",
+              "Collections prioritization",
+              "Customer payment insights",
+              "Smart invoice follow-ups",
+              "Receivable dashboard",
+              "ERP integrations",
+            ]}
+            stats={[
+              { value: "40%", label: "Faster Payments" },
+              { value: "60%", label: "Reduced DSO" },
+              { value: "24/7", label: "Automation" },
+            ]}
+          />
+
+          {/* Expense Management */}
+          <ProductCard
+            title="Expense Management"
+            description="Policy-first spending control"
+            badge="AI Spend Intelligence"
+            icon={Receipt}
+            gradient="from-green-500 to-emerald-600"
+            headerGradient="from-green-50 to-emerald-50"
+            badgeStyle="bg-green-100 border-green-200 text-green-700"
+            iconGradient="from-green-500 to-emerald-600"
+            buttonGradient="from-green-600 to-emerald-600"
+            featureIconColor="text-green-500"
+            link="/products/arthaEM"
+            features={[
+              "Receipt scanning",
+              "Fraud detection",
+              "Real-time expense visibility",
+              "Policy compliance automation",
+              "Reimbursement workflows",
+              "Corporate card integrations",
+            ]}
+            stats={[
+              { value: "3x", label: "Faster Approvals" },
+              { value: "95%", label: "Accuracy" },
+              { value: "100%", label: "Policy Control" },
+            ]}
+          />
+
+        {/* E-Invoicing centered */}
+          <ProductCard
+            title="E-Invoicing"
+            description="Global compliance automation"
+            badge="Tax Compliance Engine"
+            icon={FileText}
+            gradient="from-orange-500 to-red-600"
+            headerGradient="from-orange-50 to-red-50"
+            badgeStyle="bg-orange-100 border-orange-200 text-orange-700"
+            iconGradient="from-orange-500 to-red-600"
+            buttonGradient="from-orange-600 to-red-600"
+            featureIconColor="text-orange-500"
+            link="/products/arthaEInvoice"
+              features={[
+                "Automated e-invoice generation",
+                "Multi-country tax compliance",
+                "GST and VAT integrations",
+                "Real-time validation",
+                "Digital signature support",
+                "ERP integrations",
+              ]}
+              stats={[
+                { value: "120+", label: "Countries" },
+                { value: "99%", label: "Compliance" },
+                { value: "Instant", label: "Validation" },
+              ]}
+            />
+
+            {/* Artha-Comply */}
+            <ProductCard
+              title="Artha Comply"
+              description="Automated compliance management"
+              badge="Regulatory Compliance AI"
+              icon={Shield}
+              gradient="from-green-500 to-teal-600"
+              headerGradient="from-green-50 to-teal-50"
+              badgeStyle="bg-green-100 border-green-200 text-green-700"
+              iconGradient="from-green-500 to-teal-600"
+              buttonGradient="from-green-600 to-teal-600"
+              featureIconColor="text-green-500"
+              link="/products/arthacomply"
+              features={[
+                "Automated regulatory tracking",
+                "Compliance alerts and notifications",
+                "Policy management & audits",
+                "Document verification and storage",
+                "Multi-jurisdiction support",
+                "Audit-ready compliance reports",
+              ]}
+              stats={[
+                { value: "90%", label: "Manual Effort Reduced" },
+                { value: "500+", label: "Regulations Covered" },
+                { value: "24/7", label: "Monitoring" },
+              ]}
+            />
           </div>
         </section>
 

@@ -67,7 +67,7 @@ export default function ArthaTaxPage() {
         </section>
 
         {/* Challenge */}
-        <section className="py-32 bg-background border-t border-border">
+        <section className="py-10 bg-background border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-slate-700">Challenge</span></h2>
@@ -90,7 +90,7 @@ export default function ArthaTaxPage() {
         </section>
 
         {/* Solution */}
-        <section className="py-32 bg-muted border-t border-border">
+        <section className="py-10 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">The <span className="text-slate-700">Solution</span></h2>
@@ -150,8 +150,8 @@ export default function ArthaTaxPage() {
         </section>
 
         {/* Workflow */}
-        <section className="py-32 bg-background border-t border-border">
-          <div className="max-w-7xl mx-auto px-6">
+        <section className="py-10 bg-background border-t border-border">
+          <div className="max-w-[115vh] mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
               <h2 className="text-5xl font-bold text-foreground mb-6">How It <span className="text-slate-700">Works</span></h2>
               <p className="text-xl text-muted-foreground">From transaction to compliant filing in minutes</p>
@@ -185,7 +185,7 @@ export default function ArthaTaxPage() {
         </section>
 
         {/* Features */}
-        <section className="py-32 bg-muted border-t border-border">
+        <section className="py-10 bg-muted border-t border-border">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-16">
               <h2 className="text-5xl font-bold text-foreground mb-6">Powerful <span className="text-slate-700">Features</span></h2>
@@ -214,7 +214,7 @@ export default function ArthaTaxPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-32 bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50 relative overflow-hidden border-t border-border">
+        <section className="py-10 bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50 relative overflow-hidden border-t border-border">
           <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
             <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className="text-5xl font-bold text-foreground mb-6">Ready for Zero-Penalty Compliance?</motion.h2>

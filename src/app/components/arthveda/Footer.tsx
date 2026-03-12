@@ -62,6 +62,11 @@ export function Footer() {
                   E-Invoicing
                 </Link>
               </li>
+              <li>
+                <Link to="/products/arthacomply" className="text-sm text-gray-600 hover:text-gray-900 transition-colors">
+                  Artha Comply
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -85,7 +90,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2 text-sm text-gray-600">
                 <Mail className="w-4 h-4 mt-0.5 flex-shrink-0" />
-                <span>shreyas.kumar@arthaveda.ai</span>
+                <span>contact@arthaveda.ai</span>
               </li>
               <li className="flex items-start gap-2 text-sm text-gray-600">
                 <Phone className="w-4 h-4 mt-0.5 flex-shrink-0" />
