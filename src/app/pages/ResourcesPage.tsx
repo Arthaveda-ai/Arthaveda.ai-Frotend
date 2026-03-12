@@ -100,7 +100,7 @@ export default function ResourcesPage() {
         <Navbar />
 
         {/* Hero Section */}
-<section className="relative pt-12 overflow-hidden">
+<section className="relative pt-25 overflow-hidden">
   <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
   <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5" />
 
