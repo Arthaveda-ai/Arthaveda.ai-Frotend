@@ -11,6 +11,7 @@ import ZohoRolloutsPage from "./pages/ZohoPage";
 import ArthaTaxPage from "./pages/ArthaEInovice";
 import ArthaExpensePage from "./pages/ArthaEM";
 import ArthaCollectPage from "./pages/ArthaAR";
+import ArthaComplyPage from "./pages/ArthaComply";
 
 export const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ export const router = createBrowserRouter([
   {
     path: "/products/arthaEInvoice",
     Component: ArthaTaxPage,
+  },
+  {
+    path: "/products/arthacomply",
+    Component: ArthaComplyPage,
   },
   {
     path: "/services",
