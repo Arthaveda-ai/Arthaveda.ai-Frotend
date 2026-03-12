@@ -13,7 +13,7 @@ export default function ProductsPage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
+      <section className="relative min-h-[25vh] flex items-center justify-center overflow-hidden pt-8">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-blue-50 to-purple-50" />
         <div className="absolute inset-0 blur-3xl">
           <motion.div
@@ -56,9 +56,9 @@ export default function ProductsPage() {
 
       {/* Products Grid */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="max-w-[140vh] mx-auto px-6">
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
           {/* ArthaP2P */}
           <ProductCard
@@ -172,23 +172,19 @@ export default function ProductsPage() {
             ]}
           />
 
-        </div>
-
         {/* E-Invoicing centered */}
-        <div className="flex justify-center mt-12">
-          <div className="lg:w-1/2">
-            <ProductCard
-              title="E-Invoicing"
-              description="Global compliance automation"
-              badge="Tax Compliance Engine"
-              icon={FileText}
-              gradient="from-orange-500 to-red-600"
-              headerGradient="from-orange-50 to-red-50"
-              badgeStyle="bg-orange-100 border-orange-200 text-orange-700"
-              iconGradient="from-orange-500 to-red-600"
-              buttonGradient="from-orange-600 to-red-600"
-              featureIconColor="text-orange-500"
-              link="/products/arthaEInvoice"
+          <ProductCard
+            title="E-Invoicing"
+            description="Global compliance automation"
+            badge="Tax Compliance Engine"
+            icon={FileText}
+            gradient="from-orange-500 to-red-600"
+            headerGradient="from-orange-50 to-red-50"
+            badgeStyle="bg-orange-100 border-orange-200 text-orange-700"
+            iconGradient="from-orange-500 to-red-600"
+            buttonGradient="from-orange-600 to-red-600"
+            featureIconColor="text-orange-500"
+            link="/products/arthaEInvoice"
               features={[
                 "Automated e-invoice generation",
                 "Multi-country tax compliance",
@@ -203,14 +199,40 @@ export default function ProductsPage() {
                 { value: "Instant", label: "Validation" },
               ]}
             />
-          </div>
-        </div>
 
+            {/* Artha-Comply */}
+            <ProductCard
+              title="Artha Comply"
+              description="Automated compliance management"
+              badge="Regulatory Compliance AI"
+              icon={Shield}
+              gradient="from-green-500 to-teal-600"
+              headerGradient="from-green-50 to-teal-50"
+              badgeStyle="bg-green-100 border-green-200 text-green-700"
+              iconGradient="from-green-500 to-teal-600"
+              buttonGradient="from-green-600 to-teal-600"
+              featureIconColor="text-green-500"
+              link="/products/arthacomply"
+              features={[
+                "Automated regulatory tracking",
+                "Compliance alerts and notifications",
+                "Policy management & audits",
+                "Document verification and storage",
+                "Multi-jurisdiction support",
+                "Audit-ready compliance reports",
+              ]}
+              stats={[
+                { value: "90%", label: "Manual Effort Reduced" },
+                { value: "500+", label: "Regulations Covered" },
+                { value: "24/7", label: "Monitoring" },
+              ]}
+            />
+          </div>
       </div>
     </section>
 
         {/* Comparison Section */}
-        <section className="py-32 bg-gray-50">
+        <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-6">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
