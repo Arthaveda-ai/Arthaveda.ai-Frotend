@@ -109,9 +109,9 @@ export default function ArthaMatchPage() {
                     { title: 'Audit-Ready Reports', description: 'One-click compliance reports with full transaction trail' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center flex-shrink-0">
+                      {/* <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-6 h-6 text-white" />
-                      </div>
+                      </div>*/}
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
                         <p className="text-muted-foreground">{item.description}</p>
@@ -166,10 +166,10 @@ export default function ArthaMatchPage() {
                   <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }} className="relative">
                     <div className={`relative p-8 rounded-2xl border transition-all duration-500 ${activeStep === index ? 'bg-sky-50 border-sky-200 shadow-xl' : 'bg-background border-border'}`}>
-                      <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
+                      {/* <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
                         className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br ${step.color} shadow-lg`}>
                         <step.icon className="w-8 h-8 text-white" />
-                      </motion.div>
+                      </motion.div>*/}
                       <h3 className="text-xl font-bold text-foreground mb-2 text-center">{step.title}</h3>
                       <p className="text-sm text-muted-foreground text-center">{step.description}</p>
                       {activeStep === index && (
@@ -202,9 +202,9 @@ export default function ArthaMatchPage() {
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }} whileHover={{ y: -8 }}
                   className="p-8 bg-background border border-border rounded-2xl hover:shadow-lg transition-all">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center mb-6">
+                  {/* <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-sky-500 to-cyan-600 flex items-center justify-center mb-6">
                     <feature.icon className="w-7 h-7 text-white" />
-                  </div>
+                  </div>*/}
                   <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
                 </motion.div>

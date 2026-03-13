@@ -35,7 +35,7 @@ export default function ArthaCollectPage() {
           <div className="relative z-10 max-w-3xl mx-auto px-3 py-10 text-center">
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
               <div className="inline-flex items-center gap-1 px-2 py-1 bg-emerald-100 border border-emerald-200 rounded-full mb-4">
-                <Wallet className="w-2 h-2 text-emerald-600" />
+                {/*<Wallet className="w-2 h-2 text-emerald-600" />*/}
                 <span className="text-xs text-emerald-700 font-medium">Accounts Receivable Automation</span>
               </div>
             </motion.div>
@@ -109,9 +109,9 @@ export default function ArthaCollectPage() {
                     { title: 'Predictive Analytics', description: 'AI-powered cash flow forecasting based on payment patterns' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
+                      {/*<div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-6 h-6 text-white" />
-                      </div>
+                      </div>*/}
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
                         <p className="text-muted-foreground">{item.description}</p>
@@ -166,10 +166,10 @@ export default function ArthaCollectPage() {
                   <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }} className="relative">
                     <div className={`relative p-8 rounded-2xl border transition-all duration-500 ${activeStep === index ? 'bg-emerald-50 border-emerald-200 shadow-xl' : 'bg-background border-border'}`}>
-                      <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
+                      {/*<motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
                         className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br ${step.color} shadow-lg`}>
                         <step.icon className="w-8 h-8 text-white" />
-                      </motion.div>
+                      </motion.div>*/}
                       <h3 className="text-xl font-bold text-foreground mb-2 text-center">{step.title}</h3>
                       <p className="text-sm text-muted-foreground text-center">{step.description}</p>
                       {activeStep === index && (
@@ -192,19 +192,19 @@ export default function ArthaCollectPage() {
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: Receipt, title: 'Smart Invoicing', description: 'Template-driven invoicing with auto-generation from orders' },
-                { icon: Bell, title: 'Automated Reminders', description: 'Multi-channel dunning with escalation workflows' },
-                { icon: PieChart, title: 'AR Analytics', description: 'Aging analysis, DSO trends, and collection forecasting' },
-                { icon: Users, title: 'Customer Portal', description: 'Self-service payment and statement access' },
-                { icon: CreditCard, title: 'Multi-Payment', description: 'Accept bank transfer, UPI, cards, and digital wallets' },
-                { icon: BarChart3, title: 'Cash Flow Forecast', description: 'Predictive analytics for working capital planning' },
+                { title: 'Smart Invoicing', description: 'Template-driven invoicing with auto-generation from orders' },
+                { title: 'Automated Reminders', description: 'Multi-channel dunning with escalation workflows' },
+                { title: 'AR Analytics', description: 'Aging analysis, DSO trends, and collection forecasting' },
+                { title: 'Customer Portal', description: 'Self-service payment and statement access' },
+                { title: 'Multi-Payment', description: 'Accept bank transfer, UPI, cards, and digital wallets' },
+                { title: 'Cash Flow Forecast', description: 'Predictive analytics for working capital planning' },
               ].map((feature, index) => (
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }} whileHover={{ y: -8 }}
                   className="p-8 bg-background border border-border rounded-2xl hover:shadow-lg transition-all">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-6">
-                    <feature.icon className="w-7 h-7 text-white" />
-                  </div>
+                  {/*<<div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 flex items-center justify-center mb-6">
+                    feature.icon className="w-7 h-7 text-white" />
+                  </div>*/}
                   <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
                 </motion.div>

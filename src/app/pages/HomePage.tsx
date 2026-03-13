@@ -193,11 +193,11 @@ export default function HomePage() {
                 />
                 {/* Card */}
                 <div className="relative p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg transition">
-                  <div
+                  {/* <div
                     className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4`}
                   >
                     <service.icon className="w-6 h-6 text-white" />
-                  </div>
+                  </div>*/}
                   <h3 className="text-lg font-semibold text-gray-900 mb-1">{service.title}</h3>
                   <p className="text-sm text-gray-600">{service.description}</p>
                 </div>
@@ -316,9 +316,9 @@ export default function HomePage() {
               },
             ].map((service, index) => (
               <div key={index} className="p-6 bg-white border border-gray-200 rounded-xl hover:shadow-lg transition">
-                <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4`}>
+                {/* <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4`}>
                   <service.icon className="w-6 h-6 text-white" />
-                </div>
+                </div>*/}
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{service.title}</h3>
                 <p className="text-sm text-gray-600">{service.description}</p>
               </div>
@@ -374,9 +374,9 @@ export default function HomePage() {
               },
             ].map((item, index) => (
               <div key={index} className="p-6 bg-gray-50 border border-gray-200 rounded-xl">
-                <div className="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center mb-4">
+                {/* <div className="w-10 h-10 rounded-lg bg-indigo-600 flex items-center justify-center mb-4">
                   <item.icon className="w-5 h-5 text-white" />
-                </div>
+                </div>*/}
                 <h3 className="text-lg font-semibold text-gray-900 mb-1">{item.title}</h3>
                 <p className="text-sm text-gray-600">{item.description}</p>
               </div>

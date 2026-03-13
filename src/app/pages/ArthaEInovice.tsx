@@ -35,7 +35,7 @@ export default function ArthaTaxPage() {
           <div className="relative z-10 max-w-3xl mx-auto px-3 py-10 text-center">
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
               <div className="inline-flex items-center gap-1 px-2 py-1 bg-slate-100 border border-slate-200 rounded-full mb-4">
-                <Scale className="w-2 h-2 text-slate-600" />
+                {/* <Scale className="w-2 h-2 text-slate-600" />*/}
                 <span className="text-xs text-slate-700 font-medium">Tax Compliance Automation</span>
               </div>
             </motion.div>
@@ -109,9 +109,9 @@ export default function ArthaTaxPage() {
                     { title: 'Deadline Management', description: 'Calendar-based tracking with auto-reminders for all filing deadlines' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-600 to-gray-700 flex items-center justify-center flex-shrink-0">
+                      {/* <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-slate-600 to-gray-700 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-6 h-6 text-white" />
-                      </div>
+                      </div>*/}
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
                         <p className="text-muted-foreground">{item.description}</p>
@@ -166,10 +166,10 @@ export default function ArthaTaxPage() {
                   <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }} className="relative">
                     <div className={`relative p-8 rounded-2xl border transition-all duration-500 ${activeStep === index ? 'bg-slate-50 border-slate-300 shadow-xl' : 'bg-background border-border'}`}>
-                      <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
+                      {/* <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
                         className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br ${step.color} shadow-lg`}>
                         <step.icon className="w-8 h-8 text-white" />
-                      </motion.div>
+                      </motion.div>*/}
                       <h3 className="text-xl font-bold text-foreground mb-2 text-center">{step.title}</h3>
                       <p className="text-sm text-muted-foreground text-center">{step.description}</p>
                       {activeStep === index && (
@@ -202,9 +202,9 @@ export default function ArthaTaxPage() {
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }} whileHover={{ y: -8 }}
                   className="p-8 bg-background border border-border rounded-2xl hover:shadow-lg transition-all">
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-slate-600 to-gray-700 flex items-center justify-center mb-6">
+                  {/* <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-slate-600 to-gray-700 flex items-center justify-center mb-6">
                     <feature.icon className="w-7 h-7 text-white" />
-                  </div>
+                  </div>*/}
                   <h3 className="text-xl font-bold text-foreground mb-3">{feature.title}</h3>
                   <p className="text-sm text-muted-foreground">{feature.description}</p>
                 </motion.div>
@@ -214,7 +214,7 @@ export default function ArthaTaxPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-10 bg-gradient-to-br from-slate-50 via-gray-50 to-zinc-50 relative overflow-hidden border-t border-border">
+        <section className="py-10 bg-gradient-to-br from-indigo-50 via-slate-50 to-grey-50 relative overflow-hidden border-t border-border">
           <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
             <motion.h2 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               className="text-5xl font-bold text-foreground mb-6">Ready for Zero-Penalty Compliance?</motion.h2>

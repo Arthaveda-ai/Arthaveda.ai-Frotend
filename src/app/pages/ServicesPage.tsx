@@ -147,9 +147,9 @@ export default function ServicesPage() {
 
                       {/* Left: Header */}
                       <div className="lg:col-span-1">
-                        <div className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform shadow-md`}>
+                        {/*<div className={`w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-4 sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform shadow-md`}>
                           <service.icon className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
-                        </div>
+                        </div>*/}
                         <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1 sm:mb-2">{service.title}</h2>
                         <p className={`text-sm sm:text-base md:text-lg font-semibold mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r ${service.gradient} bg-clip-text text-transparent`}>
                           {service.subtitle}
@@ -174,7 +174,7 @@ export default function ServicesPage() {
                       <div className="lg:col-span-1 space-y-4 sm:space-y-5 md:space-y-6">
                         <div>
                           <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                            <Users className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />
+                            {/*<Users className="w-4 h-4 sm:w-5 sm:h-5 text-indigo-600" />*/}
                             <h3 className="text-base sm:text-lg font-bold text-gray-900">Who It's For</h3>
                           </div>
                           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{service.whoFor}</p>
@@ -182,7 +182,7 @@ export default function ServicesPage() {
 
                         <div>
                           <div className="flex items-center gap-2 mb-2 sm:mb-3">
-                            <Target className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />
+                            {/*<Target className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" />*/}
                             <h3 className="text-base sm:text-lg font-bold text-gray-900">Engagement Model</h3>
                           </div>
                           <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{service.engagement}</p>
@@ -294,9 +294,9 @@ export default function ServicesPage() {
                   transition={{ delay: index * 0.1 }}
                   className="p-5 sm:p-6 md:p-8 bg-white border border-gray-200 rounded-2xl hover:shadow-xl transition-all"
                 >
-                  <div className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center mb-4 sm:mb-5 md:mb-6 shadow-md">
+                  {/*<div className="w-11 h-11 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center mb-4 sm:mb-5 md:mb-6 shadow-md">
                     <item.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
-                  </div>
+                  </div>*/}
                   <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">{item.title}</h3>
                   <p className="text-xs sm:text-sm md:text-base text-gray-600">{item.description}</p>
                 </motion.div>

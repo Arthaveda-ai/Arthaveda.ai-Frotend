@@ -48,7 +48,7 @@ export default function ArthaComplyPage() {
           <div className="relative z-10 max-w-2xl mx-auto px-3 text-center" style={{ fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif" }}>
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }}>
               <div className="inline-flex items-center gap-1 px-2 py-1 bg-indigo-100 border border-indigo-200 rounded-full mb-4">
-                <Building2 className="w-2 h-2 text-indigo-600" />
+                {/*<Building2 className="w-2 h-2 text-indigo-600" />*/}
                 <span className="text-xs text-indigo-700 font-medium">Compliance Governance Platform</span>
               </div>
             </motion.div>
@@ -137,9 +137,9 @@ export default function ArthaComplyPage() {
                     { title: 'CFO Command Dashboard', description: 'Real-time compliance health score across the entire group with drill-down to entity level' },
                   ].map((item, index) => (
                     <div key={index} className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center flex-shrink-0">
+                      {/* <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center flex-shrink-0">
                         <CheckCircle2 className="w-6 h-6 text-white" />
-                      </div>
+                      </div>*/}
                       <div>
                         <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
                         <p className="text-muted-foreground">{item.description}</p>
@@ -191,7 +191,7 @@ export default function ArthaComplyPage() {
 
         {/* Workflow */}
         <section className="py-10 bg-background border-t border-border">
-          <div className="max-w-[115vh] mx-auto px-6">
+          <div className="max-w-[120vh] mx-auto px-6">
             <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-20">
               <h2 className="text-5xl font-bold text-foreground mb-6">How It <span className="text-indigo-600">Works</span></h2>
               <p className="text-xl text-muted-foreground">From entity onboarding to board-ready compliance reporting</p>
@@ -206,10 +206,10 @@ export default function ArthaComplyPage() {
                   <motion.div key={index} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }} className="relative">
                     <div className={`relative p-8 rounded-2xl border transition-all duration-500 ${activeStep === index ? 'bg-indigo-50 border-indigo-300 shadow-xl' : 'bg-background border-border'}`}>
-                      <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
+                      {/* <motion.div animate={activeStep === index ? { scale: [1, 1.1, 1] } : {}} transition={{ duration: 0.5 }}
                         className={`w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 bg-gradient-to-br ${step.color} shadow-lg`}>
                         <step.icon className="w-8 h-8 text-white" />
-                      </motion.div>
+                      </motion.div>*/}
                       <h3 className="text-xl font-bold text-foreground mb-2 text-center">{step.title}</h3>
                       <p className="text-sm text-muted-foreground text-center">{step.description}</p>
                       {activeStep === index && (
@@ -246,9 +246,9 @@ export default function ArthaComplyPage() {
                   transition={{ delay: index * 0.05 }} whileHover={{ y: -8 }}
                   className="p-8 bg-background border border-border rounded-2xl hover:shadow-lg transition-all">
                   <div className="flex items-start justify-between mb-6">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center">
+                    {/* <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-600 to-violet-700 flex items-center justify-center">
                       <segment.icon className="w-7 h-7 text-white" />
-                    </div>
+                    </div>*/}
                     <span className="px-2 py-1 bg-indigo-50 border border-indigo-200 text-indigo-600 text-xs font-bold rounded-lg">{segment.tag}</span>
                   </div>
                   <h3 className="text-xl font-bold text-foreground mb-3">{segment.title}</h3>
