@@ -77,13 +77,13 @@ export default function ProductCard({
         <div
           className={`p-7 md:p-9 border-b border-gray-200 bg-gradient-to-br ${headerGradient} text-center`}
         >
-          <motion.div
+          {/*<motion.div
             animate={{ scale: isActive ? 1.1 : 1 }}
             transition={{ duration: 0.35 }}
             className={`w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br ${iconGradient} flex items-center justify-center mb-5 shadow-md mx-auto`}
           >
             <Icon className={`w-7 h-7 md:w-8 md:h-8 ${iconColor}`} />
-          </motion.div>
+          </motion.div>*/}
 
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
             {title}
@@ -94,7 +94,7 @@ export default function ProductCard({
           </p>
 
           <div
-            className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full border ${badgeStyle}`}
+            className={`inline-flex items-left gap-2 px-3 py-1.5 rounded-full border ${badgeStyle}`}
           >
             <span className="text-xs font-medium">{badge}</span>
           </div>
@@ -140,7 +140,7 @@ export default function ProductCard({
                       delay: isActive ? idx * 0.04 : 0,
                       duration: 0.25,
                     }}
-                    className="flex items-center justify-center gap-2.5 text-gray-700 text-sm"
+                    className="flex items-left  gap-2.5 text-gray-700 text-sm"
                   >
                     <CheckCircle2
                       className={`w-4 h-4 flex-shrink-0 ${featureIconColor}`}

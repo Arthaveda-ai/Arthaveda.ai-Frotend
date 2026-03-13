@@ -79,7 +79,7 @@ export default function AboutPage() {
               transition={{ duration: 0.8 }}
               className="inline-flex items-center gap-1 px-2 py-1 bg-indigo-100 border border-indigo-200 rounded-full mb-4"
             >
-              <Brain className="w-2 h-2 text-indigo-600" />
+              {/*<Brain className="w-2 h-2 text-indigo-600" />*/}
               <span className="text-xs text-indigo-700 font-medium">About Arthveda.ai</span>
             </motion.div>
 
@@ -213,9 +213,9 @@ export default function AboutPage() {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
                       
                       {/* Gradient badge */}
-                      <div className={`absolute top-4 right-4 w-12 h-12 rounded-xl bg-gradient-to-br ${member.gradient} flex items-center justify-center shadow-lg`}>
+                      {/*<div className={`absolute top-4 right-4 w-12 h-12 rounded-xl bg-gradient-to-br ${member.gradient} flex items-center justify-center shadow-lg`}>
                         <Users className="w-6 h-6 text-white" />
-                      </div>
+                      </div>*/}
                     </div>
 
                     {/* Content */}
@@ -263,9 +263,9 @@ export default function AboutPage() {
                   transition={{ delay: index * 0.1 }}
                   className="p-8 bg-gray-50 border border-gray-200 rounded-2xl hover:shadow-xl hover:border-indigo-200 transition-all group"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
+                  {/*<div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-blue-600 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md">
                     <value.icon className="w-7 h-7 text-white" />
-                  </div>
+                  </div>*/}
                   <h3 className="text-2xl font-bold text-gray-900 mb-3">{value.title}</h3>
                   <p className="text-gray-600 leading-relaxed">{value.description}</p>
                 </motion.div>

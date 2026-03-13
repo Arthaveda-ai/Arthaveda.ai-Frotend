@@ -186,9 +186,9 @@ export default function ProductsPage() {
               ].map((item, index) => (
                 <motion.div key={index} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }}
                   className="p-6 sm:p-8 bg-white border border-gray-200 rounded-2xl hover:shadow-xl transition-all text-center">
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 sm:mb-6 shadow-md mx-auto`}>
+                  {/* <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mb-4 sm:mb-6 shadow-md mx-auto`}>
                     <item.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
-                  </div>
+                  </div>*/}
                   <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3">{item.title}</h3>
                   <p className="text-sm sm:text-base text-gray-600">{item.description}</p>
                 </motion.div>

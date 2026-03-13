@@ -149,7 +149,7 @@ export default function ResourcesPage() {
               className="mb-16"
             >
               <div className="flex items-center gap-3 mb-4">
-                <FileText className="w-8 h-8 text-indigo-600" />
+                {/*<FileText className="w-8 h-8 text-indigo-600" />*/}
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                   Latest
                   <span className="bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
@@ -224,7 +224,7 @@ export default function ResourcesPage() {
               className="mb-16"
             >
               <div className="flex items-center gap-3 mb-4">
-                <TrendingUp className="w-8 h-8 text-blue-600" />
+                {/*<TrendingUp className="w-8 h-8 text-blue-600" />*/}
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                   Success
                   <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
@@ -301,7 +301,7 @@ export default function ResourcesPage() {
               className="mb-16"
             >
               <div className="flex items-center gap-3 mb-4">
-                <FileDown className="w-8 h-8 text-purple-600" />
+                {/*<FileDown className="w-8 h-8 text-purple-600" />*/}
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
                   <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">
                     Whitepapers{' '}
@@ -325,9 +325,9 @@ export default function ResourcesPage() {
                 >
                   <div className="relative bg-white border border-gray-200 rounded-2xl p-8 hover:shadow-2xl transition-all">
                     {/* Icon */}
-                    <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${paper.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md`}>
+                    {/*<div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${paper.gradient} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-md`}>
                       <FileText className="w-8 h-8 text-white" />
-                    </div>
+                    </div>*/}
 
                     <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
                       {paper.title}
@@ -350,7 +350,7 @@ export default function ResourcesPage() {
 
                     <button className={`w-full px-6 py-3 bg-gradient-to-r ${paper.gradient} text-white rounded-xl font-semibold hover:shadow-lg transition-all flex items-center justify-center gap-2`}>
                       Download Free
-                      <FileDown className="w-5 h-5" />
+                      {/*<FileDown className="w-5 h-5" />*/}
                     </button>
                   </div>
                 </motion.div>
